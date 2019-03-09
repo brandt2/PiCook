@@ -1,5 +1,13 @@
+const mongoose = require('mongoose');
+
 const express = require("express");
 const app = express();
+const db = require('./config/key').mongoURI;
+
+mongoose
+  .connect(db, { useNewUrlParser: true })
+  .then(() => console.log("Connected to MongoDB successfully"))
+  .catch(err => console.log(err));
 
 app.get("/", (req, res) => res.send("Hello PiCook"));
 
