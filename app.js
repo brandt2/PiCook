@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 
 // Import routes
 const users = require("./routes/api/users");
+const recipes = require("./routes/api/recipes");
 
 mongoose
   .connect(db, { useNewUrlParser: true })
@@ -19,6 +20,7 @@ app.use(bodyParser.json());
 
 // routes used
 app.use("/api/users", users);
+app.use("/api/recipes", recipes);
 
 
 const port = process.env.PORT || 5000;
