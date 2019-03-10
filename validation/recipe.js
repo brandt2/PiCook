@@ -1,7 +1,7 @@
 const Validator = require('validator');
 const validText = require('./valid-text');
 
-modele.exports = function validateRecipeInput(data) {
+module.exports = function validateRecipeInput(data) {
   let errors = {};
 
   data.title = validText(data.title) ? data.title : "";
