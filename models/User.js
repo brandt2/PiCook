@@ -21,6 +21,10 @@ const UserSchema = new Schema({
   lname: {
     type: String,
     required: true
+  },
+  date: {
+    type: Date,
+    default: Date.now
   }
 })
 
