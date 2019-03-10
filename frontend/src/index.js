@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Root from './components/root';
+import configureStore from './store/store';
+
 import './index.css';
 import axios from 'axios';
-import Root from './components/root'
-import configureStore from './store/store'
+
 import { getRecipesByDishName } from './actions/recipe_actions';
-import { fetchRecipesByDishName } from './util/recipe_api_util'
+import { fetchRecipesByDishName } from './util/recipe_api_util';
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 
@@ -22,4 +24,4 @@ document.addEventListener("DOMContentLoaded", () => {
   // Test end
 
   ReactDOM.render(<Root store={store} />, document.getElementById('root'));
-})
+});
