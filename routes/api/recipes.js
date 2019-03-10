@@ -9,7 +9,7 @@ const Recipe = require('../../models/Recipe');
 const validateRecipeInput =  require('../../validation/recipe');
 
 // INDEX all recipes
-// route '/recipe' ???
+// route '/recipes' ???
 router.get("/", 
   passport.authenticate('jwt', {session: false}),
   (req, res) => {
@@ -21,7 +21,7 @@ router.get("/",
 );
 
 // SHOW one recipe
-// route '/recipe/:id' ???
+// route '/recipes/:recipe_id' ???
 router.get('/:id', 
   passport.authenticate('jwt', {session: false}),
   (req, res) => {
@@ -33,7 +33,7 @@ router.get('/:id',
 );
 
 // UPDATE a recipe
-// route '/recipe/:id' ???
+// route '/recipes/:recipe_id' ???
 router.patch('/:id',
   passport.authenticate('jwt', {session: false}),
   (req, res) => {
@@ -67,7 +67,7 @@ router.patch('/:id',
 );
 
 // CREATE new recipe
-// route '/recipe/new' ???
+// route '/recipes/new' ???
 router.post("/", 
   passport.authenticate('jwt', {session: false}),
   (req, res) => {
@@ -87,6 +87,21 @@ router.post("/",
       date: req.body.date
     });
     newRecipe.save().then(recipe => res.json(recipe));
+  }
+);
+
+// DELETE a recipe
+// route '/recipes/:recipe_id' ???
+router.delete('/:id', 
+  passport.authenticate('jwt', {session: false}),
+  (req, res) => {
+    Recipe.findByIdAndRemove(req.params.id, function(err, recipe) {
+      if (err) {
+        res.json(err);
+      } else {
+        res.json("Recipe has been successfully removed");
+      }
+    });
   }
 );
 
