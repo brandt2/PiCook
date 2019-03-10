@@ -16,6 +16,15 @@ router.get("/", (req, res) => {
     .catch(err => res.status(404).json({norecipesfound: "No recipes found"}));
 });
 
+// SHOW one recipe
+router.get('/:id', (req, res) => {
+  Recipe.findById(req.params.id)
+    .then(recipe => res.json(recipe))
+    .catch(err => 
+      res.status(404).json({norecipefound: "No recipe found with that ID"}));
+});
+
+
 // CREATE new recipe
 router.post("/recipe", (res, req) => {
   const { errors, isValid } = validateNewRecipeInput(req.body);
