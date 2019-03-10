@@ -11,9 +11,9 @@ export const receiveRecipes = recipes => ({
   recipes
 })
 
-export const fetchRecipesByDishName = dishName => (
+export const getRecipesByDishName = dishName => (
   fetchRecipesByDishName(dishName)
-    .then(recipes => dispatchEvent(receiveRecipes(recipes)))
+    .then(recipes => dispatchEvent(receiveRecipes(recipes.data.meals)))
     .catch(err => console.log(err))
 );
 
