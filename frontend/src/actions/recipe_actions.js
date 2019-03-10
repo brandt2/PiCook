@@ -11,11 +11,10 @@ export const receiveRecipes = recipes => ({
   recipes
 })
 
-export const getRecipesByDishName = dishName => (
-  fetchRecipesByDishName(dishName)
-    .then(recipes => dispatchEvent(receiveRecipes(recipes.data.meals)))
-    .catch(err => console.log(err))
-);
-
+export const getRecipesByDishName = dishName => dispatch => (
+  fetchRecipesByDishName(dishName)    
+    .then(recipes => dispatch(receiveRecipes(recipes)))
+  //   .catch(err => console.log(err))
+)
 
 

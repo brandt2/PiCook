@@ -8,6 +8,7 @@ const RecipesReducer = (state = {}, action) => {
   let newState = Object.assign({}, state);
   switch(action.type) {
     case RECEIVE_RECIPES:
+      // return Object.values(action.recipes);
       return action.recipes;
     default:
       return state;
