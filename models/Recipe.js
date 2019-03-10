@@ -14,15 +14,21 @@ const RecipeSchema = new Schema ({
     type: Number,
   },
   instructions: {
-    type: String
+    type: String,
+    required: true
   },
   ingredients: {
-    type: String
+    type: String,
+    required: true
   },
   note: {
     type: String
+  },
+  date: {
+    type: Date,
+    default: Date.now
   }
 });
 
-const Recipe = mongoose.model('recipes', RecipeSchema);
+const Recipe = mongoose.model('recipe', RecipeSchema);
 module.exports = Recipe;
