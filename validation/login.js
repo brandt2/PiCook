@@ -1,6 +1,9 @@
 const Validator = require("validator");
 const validText = require("./valid-text");
 
+// can edit to add more lines that are necessary to login
+// might chane username back to email
+
 module.exports = function(data) {
   let errors = {};
 
