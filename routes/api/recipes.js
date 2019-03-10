@@ -46,7 +46,7 @@ router.patch('/:id',
       if (!recipe) {      // can't find recipe with :id
         res.status(404).json({norecipefound: "No recipe found with that ID"});
       } else {            // can find recipe with :id
-        if (!isValid) {   // RecipeInput not valid  @@@  or catch the errors?
+        if (!isValid) {   // RecipeInput not valid  @@@  or catch the errors? line 62
           return res.status(400).json(errors);
         } else {          // RecipeInput valid
           recipe.user = req.body.user;
@@ -72,8 +72,8 @@ router.patch('/:id',
 // CREATE new recipe
 // route '/recipes/new' ???
 router.post("/", 
+// to only route to the current users recipes?
   // passport.authenticate('jwt', {session: false}),
-  // to only route to the current users recipes?
   (req, res) => {
     const { errors, isValid } = validateRecipeInput(req.body);
 
