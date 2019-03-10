@@ -26,31 +26,28 @@ router.get('/:id', (req, res) => {
 
 
 // CREATE new recipe
-router.post("/recipe", (res, req) => {
-  const { errors, isValid } = validateNewRecipeInput(req.body);
+router.post("/", 
+  passport.authenticate('jwt', {session: false}),
+  (req, res) => {
+    const { errors, isValid } = validateNewRecipeInput(req.body);
 
-  if (!isValid) {
-    return res.status(400).json(errors);
+    if(!isValid) {
+      return res.status(400).json(errors);
+    }
+
+    const newRecipe = new Recipe({
+      user: req.body.user,
+      title: req.body.title,
+      price: req.body.price,
+      instructions: req.body.instructions,
+      ingredients: req.body.ingredients,
+      note: req.body.note,
+      date: req.body.date
+    });
+    newRecipe.save().then(recipe => res.json(recipe));
   }
+);
 
-  Recipe.findOne({title: req.body.title})
-    .then(recipe => {
-      if (recipe) {
-        return res.status(400).json({title: "You have already saved a recipe with that title"})
-      } else {
-        const newRecipe = new Recipe({
-          user: req.body.user,
-          title: req.body.title,
-          price: req.body.price,
-          instructions: req.body.instructions,
-          ingredients: req.body.ingredients,
-          note: req.body.note
-        })
-
-        newRecipe.save().then(recipe => res.send(recipe)).catch(err => res.send(err));
-      }
-    })
-});
 
 
 module.exports = router;
