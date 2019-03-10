@@ -1,14 +1,20 @@
 const express = require("express");
 const router = express.Router();
-const Recipe = require('../../models/Recipe');
+const mongoose = require('mongoose');
+const passport = require('passport');
 // const jwt = require('jsonwebtoken');
 // const keys = require('../../config/keys');
-// const passport = require('passport');
 
+const Recipe = require('../../models/Recipe');
 const validateNewRecipeInput =  require('../../validation/new-recipe');
 
-
-router.get("/test", (req, res) => res.json({ msg: "This is the recipes route" }));
+// INDEX all recipes
+router.get("/", (req, res) => {
+  Recipe.find()
+    .sort({date: -1})
+    .then(recipe => res.json(recipe))
+    .catch(err => res.status(404).json({norecipesfound: "No recipes found"}));
+});
 
 // CREATE new recipe
 router.post("/recipe", (res, req) => {
