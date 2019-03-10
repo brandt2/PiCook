@@ -13,9 +13,16 @@ const RecipeSchema = new Schema ({
   price: {
     type: Number,
   },
+  instructions: {
+    type: String
+  },
+  ingredients: {
+    type: String
+  },
   note: {
     type: String
   }
 });
 
-module.exports = Recipe = mongoose.model('recipe', RecipeSchema);
+const Recipe = mongoose.model('recipes', RecipeSchema);
+module.exports = Recipe;
