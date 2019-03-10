@@ -13,7 +13,10 @@ mongoose
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch(err => console.log(err));
 
-app.get("/", (req, res) => res.send("Hello PiCook"));
+app.get("/", (req, res) => {
+  // debugger;
+  res.send("Hello PiCook");
+});
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
