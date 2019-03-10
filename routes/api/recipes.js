@@ -6,7 +6,7 @@ const passport = require('passport');
 // const keys = require('../../config/keys');
 
 const Recipe = require('../../models/Recipe');
-const validateNewRecipeInput =  require('../../validation/new-recipe');
+const validateRecipeInput =  require('../../validation/recipe');
 
 // INDEX all recipes
 // route '/recipe' ???
@@ -32,13 +32,46 @@ router.get('/:id',
   }
 );
 
+// UPDATE a recipe
+// route '/recipe/:id' ???
+router.patch('/:id',
+  passport.authenticate('jwt', {session: false}),
+  (req, res) => {
+    const { errors, isValid } = validateRecipeInput(req.body);
+
+    Recipe.findById(req.params.id, function(err, recipe) {
+      if (!recipe) {      // can't find recipe with :id
+        res.status(404).json({norecipefound: "No recipe found with that ID"});
+      } else {            // can find recipe with :id
+        if (!isValid) {   // RecipeInput not valid
+          return res.status(400).json(errors);
+        } else {          // RecipeInput valid
+          recipe.user = req.body.user;
+          recipe.title = req.body.title;
+          recipe.price = req.body.price;
+          recipe.instructions = req.body.instructions;
+          recipe.ingredients = req.body.ingredients;
+          recipe.note = req.body.note;
+          recipe.date = req.body.date;
+
+          recipe.save().then(recipe => res.json(recipe));
+
+// is it better to catch the errors? or keep it as a if/else statement
+            // .catch(err => {res.status(400).json(errors);
+            // });
+
+        }
+      }
+     });
+  }
+);
 
 // CREATE new recipe
 // route '/recipe/new' ???
 router.post("/", 
   passport.authenticate('jwt', {session: false}),
   (req, res) => {
-    const { errors, isValid } = validateNewRecipeInput(req.body);
+    const { errors, isValid } = validateRecipeInput(req.body);
 
     if(!isValid) {
       return res.status(400).json(errors);
