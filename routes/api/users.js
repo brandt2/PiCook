@@ -12,7 +12,7 @@ router.post('/register', (req, res) => {
         return res.status(400).json({ email: "A user has already registered with this email address"})
       } else {
         const newUser = new User({
-          username: req.user.username,
+          username: req.body.username,
           email: req.body.email,
           password: req.body.password,
           fname: req.body.fname,
@@ -33,13 +33,13 @@ router.post('/register', (req, res) => {
 })
 
 router.post("/login", (req, res) => {
-  const email = req.body.email;
+  const username = req.body.username;
   const password = req.body.password;
 
-  User.findOne({ email })
+  User.findOne({ username })
     .then(user => {
       if(!user) {
-        return res.status(404).json({ email: "This user does not exist." });
+        return res.status(404).json({ username: "This user does not exist." });
       }
 
       bcrypt.compare(password, user.password)
