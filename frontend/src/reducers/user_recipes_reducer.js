@@ -14,7 +14,10 @@ const UserRecipesReducer = (oldState = {}, action) => {
     case RECEIVE_RECIPES:
       return action.recipes;
     case RECEIVE_RECIPE:
-      state = merge({}, oldState, {[action.recipe.id]: action.recipe});
+      const recipe = action.recipe.data;
+      // debugger
+      state = merge({}, oldState, {[action.recipe._id]: action.recipe});
+      // state = merge({}, oldState, {[recipe._id]: recipe});
       return state;
     case REMOVE_RECIPE:
       state = merge({}, oldState);

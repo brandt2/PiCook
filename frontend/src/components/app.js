@@ -11,6 +11,7 @@ import DBRecipeByNameContainer from './meals_db_recipes/db_recipes_by_name_conta
 
 import RecipeContainer from './recipes/recipe_container';
 import CreateRecipeContainer from './recipes/create_recipe_container';
+import ShowRecipeContainer from './recipes/show_recipe_container';
 
 const App = () => (
   <div>
@@ -22,6 +23,7 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <Route path="/dbmeals" component={DBRecipeByNameContainer} />
       <ProtectedRoute path="/recipes/new" component={CreateRecipeContainer} />
+      <ProtectedRoute path="/recipes/:id" component={ShowRecipeContainer} />
       <ProtectedRoute path="/recipes" component={RecipeContainer} />
     </Switch>
   </div>
