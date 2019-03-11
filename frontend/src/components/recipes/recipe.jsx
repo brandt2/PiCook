@@ -1,12 +1,14 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import RecipeBox from './recipe_box';
+import { button, Link, NavLink } from 'react-router-dom';
 
 class Recipe extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = this.props.recipes;
+    this.state = {
+      recipes: []
+    };
   }
 
   componentWillMount() {
@@ -22,10 +24,12 @@ class Recipe extends React.Component {
       return (<div className="no-index-recipes">There are no Recipes</div>)
     } else {
       return (
-        <div className="yes-index-recipes">
+        <div className="index-recipes">
           <h2>All Recipes</h2>
-          {this.state.recipes.map(recipe => (
-            <RecipeBox key={recipe.id} title={recipe.title} />
+          {this.state.recipes.map( (recipe,idx) => (
+            <NavLink to={`/recipes/${recipe.id}`} key={idx} >
+              <div className="index-recipe-title">{recipe.title}</div>
+            </NavLink>
           ))}
         </div>
       );
