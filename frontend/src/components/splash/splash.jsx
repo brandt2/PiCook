@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import './splash.css';
 
 export default () => (
-  <div>
+  <div className="splash">
     <div>
       <h1>Find your Recipe</h1>
       <br/>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './navbar.css';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -17,16 +18,22 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div>
-          <Link to={'/recipes'}>All Recipes</Link>
-          <Link to={'/main'}>Main</Link>
-          <button onClick={this.logoutUser}>Logout</button>
+          <ul className="header-list">
+            <li className="main-button"><Link to={'/main'}>Main</Link></li>
+            <li className="cuisine-button"><Link to={'/cuisines'}>Cuisines</Link></li>
+            <div className="logout-button-div">
+              <li><button className="logout-button" onClick={this.logoutUser}>Logout</button></li>
+            </div>
+          </ul>
         </div>
       );
     } else {
       return (
         <div>
-          <Link to={'/signup'}>Signup</Link>
-          <Link to={'/login'}>Login</Link>
+          <ul className="header-list">
+            <li className="signup-button"><Link to={'/signup'}>Signup</Link></li>
+            <li className="login-button"><Link to={'/login'}>Login</Link></li>
+          </ul>
         </div>
       );
     }
@@ -34,10 +41,19 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>PiCook</h1>
-        { this.getLinks() }
-      </div>
+      <header className="navbar-header">
+        <nav className="header-navbar">
+
+          <div className="navbar-left">
+            <div className="logo-image">
+              <img src={require("./favicon.png")} alt=""/>
+            </div>
+            <h1 className="navbar-logo"><Link to="/">PiCook</Link></h1>    
+          </div>
+
+          { this.getLinks() }
+        </nav>
+      </header>
     );
   }
 }
