@@ -9,11 +9,7 @@ const Recipe = require('../../models/Recipe');
 const validateRecipeInput =  require('../../validation/recipe');
 
 // INDEX all recipes
-// route '/recipes' ???
-router.get("/", 
-// to only route to the current users recipes?
-  // passport.authenticate('jwt', {session: false}),
-  (req, res) => {
+router.get("/", (req, res) => {
     Recipe.find()
       .sort({date: -1})
       .then(recipe => res.json(recipe))
@@ -22,12 +18,10 @@ router.get("/",
 );
 
 // SHOW one recipe
-// route '/recipes/:recipe_id' ???
-router.get('/:id', 
-// to only route to the current users recipes?
-  // passport.authenticate('jwt', {session: false}),
-  (req, res) => {
+router.get('/:id', (req, res) => {
     Recipe.findById(req.params.id)
+    // Recipe.findById({_id: req.params.id})
+    // Recipe.findOne({"_id$oid": req.params.id})
       .then(recipe => res.json(recipe))
       .catch(err => 
         res.status(404).json({norecipefound: "No recipe found with that ID"}));
@@ -35,18 +29,14 @@ router.get('/:id',
 );
 
 // UPDATE a recipe
-// route '/recipes/:recipe_id' ???
-router.patch('/:id',
-// to only route to the current users recipes?
-  // passport.authenticate('jwt', {session: false}),
-  (req, res) => {
+router.patch('/:id', (req, res) => {
     const { errors, isValid } = validateRecipeInput(req.body);
 
-    Recipe.findById(req.params.id, function(err, recipe) {
+    Recipe.findById(req.params.id, (err, recipe) => {
       if (!recipe) {      // can't find recipe with :id
         res.status(404).json({norecipefound: "No recipe found with that ID"});
       } else {            // can find recipe with :id
-        if (!isValid) {   // RecipeInput not valid  @@@  or catch the errors? line 62
+        if (!isValid) {   // RecipeInput not valid  @@@  or catch the errors? line 50
           return res.status(400).json(errors);
         } else {          // RecipeInput valid
           recipe.user = req.body.user;
@@ -58,11 +48,6 @@ router.patch('/:id',
           recipe.date = req.body.date;
 
           recipe.save().then(recipe => res.json(recipe));
-
-// is it better to catch the errors? or keep it as a if/else statement
-            // .catch(err => {res.status(400).json(errors);
-            // });
-
         }
       }
      });
@@ -70,11 +55,7 @@ router.patch('/:id',
 );
 
 // CREATE new recipe
-// route '/recipes/new' ???
-router.post("/", 
-// to only route to the current users recipes?
-  // passport.authenticate('jwt', {session: false}),
-  (req, res) => {
+router.post("/", (req, res) => {
     const { errors, isValid } = validateRecipeInput(req.body);
 
     if(!isValid) {
@@ -95,12 +76,8 @@ router.post("/",
 );
 
 // DELETE a recipe
-// route '/recipes/:recipe_id' ???
-router.delete('/:id', 
-// to only route to the current users recipes?
-  // passport.authenticate('jwt', {session: false}),
-  (req, res) => {
-    Recipe.findByIdAndRemove(req.params.id, function(err, recipe) {
+router.delete('/:id', (req, res) => {
+    Recipe.findByIdAndRemove(req.params.id, (err, recipe) => {
       if (err) {
         res.json(err);
       } else {
