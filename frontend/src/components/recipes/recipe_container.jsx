@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Recipe from './recipe';
-import { fetchAllRecipes } from '../../actions/recipe_actions';
+import { fetchAllRecipes } from '../../actions/user_recipe_actions';
 
 
 const mapStateToProps = state => {
