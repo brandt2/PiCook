@@ -10,6 +10,7 @@ import SignupFormContainer from './session/signup_form_container';
 import DBRecipeByNameContainer from './meals_db_recipes/db_recipes_by_name_container'
 
 import RecipeContainer from './recipes/recipe_container';
+import CreateRecipeContainer from './recipes/create_recipe_container';
 
 const App = () => (
   <div>
@@ -20,6 +21,7 @@ const App = () => (
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <Route path="/dbmeals" component={DBRecipeByNameContainer} />
+      <ProtectedRoute path="/recipes/new" component={CreateRecipeContainer} />
       <ProtectedRoute path="/recipes" component={RecipeContainer} />
     </Switch>
   </div>
