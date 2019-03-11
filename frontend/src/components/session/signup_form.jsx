@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import './signup.css';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -49,7 +50,7 @@ class SignupForm extends React.Component {
 
   renderErrors() {
     return (
-      <ul>
+      <ul className="signup-errors">
         {Object.keys(this.state.errors).map((error, i) => (
           <li key={`error-${i}`}>
             {this.state.errors[error]}
@@ -61,49 +62,55 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit}>
-          <div className="login-form">
-            <br />
-            <input type="text"
-              value={this.state.username}
-              onChange={this.update('username')}
-              placeholder="Username"
-            />
-            <br />
-            <input type="text"
-              value={this.state.email}
-              onChange={this.update('email')}
-              placeholder='Email'
-            />
-            <br />
+      <div className="signup-form-container">
+        <form className="signup-form" onSubmit={this.handleSubmit}>
+          <div className="favicon">
+            <img src={require("./favicon.png")} alt=""/>
+          </div>
+          <h2 className="signup-title">Sign Up</h2>
+          {this.renderErrors()}
+          <br/>
+          
+          <div className="signup-name">
             <input type="text"
               value={this.state.fname}
               onChange={this.update('fname')}
               placeholder='First name'
+              className="firstname"
             />
-            <br />
             <input type="text"
               value={this.state.lname}
               onChange={this.update('lname')}
               placeholder='Last name'
+              className="lastname"
             />
-            <br />
-            <input type="password"
-              value={this.state.password}
-              onChange={this.update('password')}
-              placeholder="Password"
-            />
-            <br />
-            <input type="password"
-              value={this.state.password2}
-              onChange={this.update('password2')}
-              placeholder="Confirm Password"
-            />
-            <br />
-            <input type="submit" value="Submit" />
-            {this.renderErrors()}
           </div>
+
+          <input type="text"
+            value={this.state.username}
+            onChange={this.update('username')}
+            placeholder="Username"
+            className="username"
+          />
+          <input type="text"
+            value={this.state.email}
+            onChange={this.update('email')}
+            placeholder='Email'
+            className="email"
+          />
+          <input type="password"
+            value={this.state.password}
+            onChange={this.update('password')}
+            placeholder="Password"
+            className="password"
+          />
+          <input type="password"
+            value={this.state.password2}
+            onChange={this.update('password2')}
+            placeholder="Confirm Password"
+            className="password"
+          />
+          <input className="signup-form-button" type="submit" value="Submit" />
         </form>
       </div>
     );
