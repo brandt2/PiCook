@@ -10,15 +10,15 @@ class DBRecipesByName extends React.Component {
       recipes: []
     }
 
-    this.keyword = "chicken"
+    this.keyword = "Ma Po Tofu"
   }
   componentDidMount() {
-    this.setState(this.props.getRecipesByDishName(this.keyword))
-    console.log(this.state)
+    this.props.getRecipesByDishName(this.keyword)
+    // this.setState(this.props.getRecipesByDishName(this.keyword))
   }
   render() {
     // get search keyword from props from alec
-    if (this.state.recipes.length === 0) {
+    if (this.props.recipes.length === 0) {
       return (
         <div>Sorry, no recipes for {`${this.keyword}`}</div>
       )
@@ -26,8 +26,8 @@ class DBRecipesByName extends React.Component {
       return (
         <div className="yes-index-recipes">
           <h2>Recipes Found</h2>
-          {this.state.recipes.map(recipe => (
-            <DBRecipeBox key={recipe._id} recipe={recipe}/>
+          {this.props.recipes.map((recipe, i) => (
+            <DBRecipeBox key={i} recipe={recipe}/>
           ))}
         </div>
       )

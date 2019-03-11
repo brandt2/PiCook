@@ -5,7 +5,8 @@ export const fetchRecipesByDishName = food => (
   axios({
     method: 'get',
     url: `https://www.themealdb.com/api/json/v1/1/search.php?s=${food}`,
-  }).then(res => res.data.meals)
+  })
+  // .then(res => res.data.meals)
 )
 
 export const fetchRecipesByIngredient = ingredient => {

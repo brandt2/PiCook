@@ -10,7 +10,7 @@ const RecipesReducer = (state = [], action) => {
   let newState = Object.assign({}, state);
   switch(action.type) {
     case RECEIVE_RECIPES:
-      return Object.assign(newState, action.recipes);
+      return Object.assign(newState, action.payload.meals);
     case RECEIVE_RECIPE:
       return Object.assign(newState, action.recipe);
     // case RECEIVE_PUPPY_RECIPES:
