@@ -28,8 +28,8 @@ export const fetchRecipesByCat = cat => {
 //     .then(res => res.results)
 // }
 
-export const request = require('request');
-request('http://www.recipepuppy.com', (error, res) => {
-  console.log('error: ', error);
-  console.log('response: ', res)
-})
+// export const request = require('request');
+// request('http://www.recipepuppy.com', (error, res) => {
+//   console.log('error: ', error);
+//   console.log('response: ', res)
+// })

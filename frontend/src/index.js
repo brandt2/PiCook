@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.axios = axios;
   window.dispatch = store.dispatch;
   window.getRecipesByDishName = getRecipesByDishName;
-  window.request = request;
+  // window.request = request;
   // Test end
 
   ReactDOM.render(<Root store={store} />, document.getElementById('root'));

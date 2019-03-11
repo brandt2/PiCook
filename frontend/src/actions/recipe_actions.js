@@ -20,6 +20,30 @@ export const receiveRecipe = recipe => ({
 //   puppyRecipes
 // })
 
+export const getRecipesByDishName = food => dispatch => (
+  RecipeAPIs.fetchRecipesByDishName(food)
+    .then(res => (dispatch(receiveRecipes(res)))
+  )
+)
+
+export const getRecipesByIngredient = food => dispatch => (
+  RecipeAPIs.fetchRecipesByIngredient(food)
+    .then(res => (dispatch(receiveRecipes(res)))
+  )
+)
+
+export const getRecipesByCat = food => dispatch => (
+  RecipeAPIs.fetchRecipesByCat(food)
+    .then(res => (dispatch(receiveRecipes(res)))
+  )
+)
+
+export const getRecipesById = id => dispatch => (
+  RecipeAPIs.fetchRecipeById(id)
+    .then(res => (dispatch(receiveRecipes(res)))
+  )
+)
+
 // export const getRecipesByDishName = food => dispatch => {
 //   return RecipeAPIs.fetchRecipesByDishName(food).then(res => {
 //     if (res === null) {
@@ -39,45 +63,4 @@ export const receiveRecipe = recipe => ({
 //       return (res => dispatch(receiveRecipes(res))) }
 //   }).catch(err => console.log(err))
 //   // .then(recipes => dispatch(receiveRecipes(recipes)))
-// }
-
-export const getRecipesByDishName = food => dispatch => {
-  return RecipeAPIs.fetchRecipesByDishName(food).then(res => {
-    if (res === null) {
-      console.log(`Sorry, no results for ${food}. Please try another term.`)
-    } else { 
-      debugger
-      return dispatch(receiveRecipes(res))
-    }
-  })
-}
-
-export const getRecipesByIngredient = ingredient => dispatch => {
-  return RecipeAPIs.fetchRecipesByIngredient(ingredient).then(res => {
-    if (res === null) {
-      console.log(`Sorry, no results for ${ingredient}. Please try another term.`)
-    } else {
-      return (res => dispatch(receiveRecipes(res)))
-    }
-  })
-}
-
-export const getRecipesByCategory = category => dispatch => {
-  return RecipeAPIs.fetchRecipesByCat(category).then(res => {
-    if (res === null) {
-      console.log(`Sorry, no results for ${category}. Please try another term.`)
-    } else {
-      return (res => dispatch(receiveRecipes(res)))
-    }
-  })
-}
-
-// export const getRecipeById = id => dispatch => {
-//   return RecipeAPIs.fetchRecipeById(id).then(res => {
-//     if (res === null) {
-//       console.log(`Sorry, no results for ${food}. Please try another term.`)
-//     } else {
-//       return (res => dispatch(receiveRecipe(res)))
-//     }
-//   })
 // }
