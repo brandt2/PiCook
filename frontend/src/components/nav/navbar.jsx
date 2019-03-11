@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './navbar.css';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div>
-          <ul>
+          <ul className="header-list">
             <li><Link to={'/main'}>Main</Link></li>
             <li><Link to={'/cuisines'}>Cuisines</Link></li>
             <div>
@@ -29,9 +30,9 @@ class NavBar extends React.Component {
     } else {
       return (
         <div>
-          <ul>
-            <li><Link to={'/signup'}>Signup</Link></li>
-            <li><Link to={'/login'}>Login</Link></li>
+          <ul className="header-list">
+            <li className="signup-button"><Link to={'/signup'}>Signup</Link></li>
+            <li className="login-button"><Link to={'/login'}>Login</Link></li>
           </ul>
         </div>
       );
@@ -40,9 +41,13 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <header>
-        <nav>
-          <h1><Link to="/">PiCook</Link></h1>    
+      <header className="navbar-header">
+        <nav className="header-navbar">
+
+          <div className="navbar-left">
+            <h1 className="navbar-logo"><Link to="/">PiCook</Link></h1>    
+          </div>
+
           { this.getLinks() }
         </nav>
       </header>

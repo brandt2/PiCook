@@ -1,0 +1,62 @@
+.navbar-header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: fixed;
+  background: rgba(0,0,0,.20);
+  height: 64px;
+  padding: 0 24px;
+  z-index: 2;
+}
+
+.header-navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-list {
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.header-list > li {
+  margin-right: 50px;
+  line-height: 64px;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-size: 30px;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(255, 255, 255);
+  margin-right: 40px;
+}
+
+.login-button {
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.signup-button {
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.login-button:hover {
+  transition: 0.4s;
+  color: rgb(115, 231, 125);
+}
+
+.signup-button:hover {
+  transition: 0.4s;
+  color: rgb(115, 231, 125);
+}
