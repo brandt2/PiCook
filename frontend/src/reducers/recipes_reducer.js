@@ -1,7 +1,7 @@
 import {
   RECEIVE_RECIPES,
   RECEIVE_RECIPE,
-  RECEIVE_PUPPY_RECIPES
+  // RECEIVE_PUPPY_RECIPES
 } from '../actions/recipe_actions';
 
 const RecipesReducer = (state = [], action) => {
@@ -13,11 +13,11 @@ const RecipesReducer = (state = [], action) => {
       return action.recipes;
     case RECEIVE_RECIPE:
       return Object.assign(newState, action.recipe);
-    case RECEIVE_PUPPY_RECIPES:
-      return Object.assign(newState, action.puppyRecipes)
+    // case RECEIVE_PUPPY_RECIPES:
+    //   return Object.assign(newState, action.puppyRecipes)
     default:
       return state;
   }
-}
+};
 
 export default RecipesReducer;

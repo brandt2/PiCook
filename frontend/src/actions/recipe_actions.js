@@ -1,33 +1,33 @@
-import * as RecipeApiUtil from '../util/recipe_api_util';
+import * as RecipeAPIs from '../util/recipe_api_util';
 
 export const RECEIVE_RECIPES = "RECEIVE_RECIPES";
 export const RECEIVE_RECIPE = "RECEIVE_RECIPE";
-export const RECEIVE_PUPPY_RECIPES = "RECEIVE_PUPPY_RECIPES";
+export const REMOVE_RECIPE = "REMOVE_RECIPE";
+
 
 export const receiveRecipes = recipes => ({
   type: RECEIVE_RECIPES,
   recipes
-})
+});
 
 export const receiveRecipe = recipe => ({
   type: RECEIVE_RECIPE,
   recipe
 })
 
-export const receivePuppyRecipes = puppyRecipes => ({
-  type: RECEIVE_PUPPY_RECIPES,
-  puppyRecipes
-})
-
+// export const receivePuppyRecipes = puppyRecipes => ({
+//   type: RECEIVE_PUPPY_RECIPES,
+//   puppyRecipes
+// })
 
 // export const getRecipesByDishName = food => dispatch => {
-//   return RecipeApiUtil.fetchRecipesByDishName(food).then(res => {
+//   return RecipeAPIs.fetchRecipesByDishName(food).then(res => {
 //     if (res === null) {
-//       return RecipeApiUtil.fetchRecipesByIngredient(food).then(res => {
+//       return RecipeAPIs.fetchRecipesByIngredient(food).then(res => {
 //         if (res === null) {
-//           return RecipeApiUtil.fetchRecipesByCat(food).then(res => {
+//           return RecipeAPIs.fetchRecipesByCat(food).then(res => {
 //             if (res === null) {
-//               return RecipeApiUtil.fetchRecipesFromPuppy(food)
+//               return RecipeAPIs.fetchRecipesFromPuppy(food)
 //                 .then(puppyRecipe => dispatch(receivePuppyRecipes(puppyRecipe)))
 //               // console.log(`Sorry, no results for ${food}. Please try another term.`)
 //             } else { return(res => dispatch(receiveRecipes(res))) }
@@ -42,7 +42,7 @@ export const receivePuppyRecipes = puppyRecipes => ({
 // }
 
 export const getRecipesByDishName = food => dispatch => {
-  return RecipeApiUtil.fetchRecipesByDishName(food).then(res => {
+  return RecipeAPIs.fetchRecipesByDishName(food).then(res => {
     if (res === null) {
       console.log(`Sorry, no results for ${food}. Please try another term.`)
     } else { 
@@ -53,12 +53,31 @@ export const getRecipesByDishName = food => dispatch => {
 }
 
 export const getRecipesByIngredient = ingredient => dispatch => {
-  return RecipeApiUtil.fetchRecipesByIngredient(ingredient).then(res => {
+  return RecipeAPIs.fetchRecipesByIngredient(ingredient).then(res => {
     if (res === null) {
-
+      console.log(`Sorry, no results for ${ingredient}. Please try another term.`)
     } else {
       return (res => dispatch(receiveRecipes(res)))
     }
   })
 }
 
+export const getRecipesByCategory = category => dispatch => {
+  return RecipeAPIs.fetchRecipesByCat(category).then(res => {
+    if (res === null) {
+      console.log(`Sorry, no results for ${category}. Please try another term.`)
+    } else {
+      return (res => dispatch(receiveRecipes(res)))
+    }
+  })
+}
+
+// export const getRecipeById = id => dispatch => {
+//   return RecipeAPIs.fetchRecipeById(id).then(res => {
+//     if (res === null) {
+//       console.log(`Sorry, no results for ${food}. Please try another term.`)
+//     } else {
+//       return (res => dispatch(receiveRecipe(res)))
+//     }
+//   })
+// }

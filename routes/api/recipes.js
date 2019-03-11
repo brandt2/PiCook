@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
-// const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');
 // const keys = require('../../config/keys');
 
 const Recipe = require('../../models/Recipe');
@@ -11,7 +11,8 @@ const validateRecipeInput =  require('../../validation/recipe');
 // INDEX all recipes
 // route '/recipes' ???
 router.get("/", 
-  passport.authenticate('jwt', {session: false}),
+// to only route to the current users recipes?
+  // passport.authenticate('jwt', {session: false}),
   (req, res) => {
     Recipe.find()
       .sort({date: -1})
@@ -23,7 +24,8 @@ router.get("/",
 // SHOW one recipe
 // route '/recipes/:recipe_id' ???
 router.get('/:id', 
-  passport.authenticate('jwt', {session: false}),
+// to only route to the current users recipes?
+  // passport.authenticate('jwt', {session: false}),
   (req, res) => {
     Recipe.findById(req.params.id)
       .then(recipe => res.json(recipe))
@@ -35,7 +37,8 @@ router.get('/:id',
 // UPDATE a recipe
 // route '/recipes/:recipe_id' ???
 router.patch('/:id',
-  passport.authenticate('jwt', {session: false}),
+// to only route to the current users recipes?
+  // passport.authenticate('jwt', {session: false}),
   (req, res) => {
     const { errors, isValid } = validateRecipeInput(req.body);
 
@@ -43,7 +46,7 @@ router.patch('/:id',
       if (!recipe) {      // can't find recipe with :id
         res.status(404).json({norecipefound: "No recipe found with that ID"});
       } else {            // can find recipe with :id
-        if (!isValid) {   // RecipeInput not valid
+        if (!isValid) {   // RecipeInput not valid  @@@  or catch the errors? line 62
           return res.status(400).json(errors);
         } else {          // RecipeInput valid
           recipe.user = req.body.user;
@@ -69,7 +72,8 @@ router.patch('/:id',
 // CREATE new recipe
 // route '/recipes/new' ???
 router.post("/", 
-  passport.authenticate('jwt', {session: false}),
+// to only route to the current users recipes?
+  // passport.authenticate('jwt', {session: false}),
   (req, res) => {
     const { errors, isValid } = validateRecipeInput(req.body);
 
@@ -93,7 +97,8 @@ router.post("/",
 // DELETE a recipe
 // route '/recipes/:recipe_id' ???
 router.delete('/:id', 
-  passport.authenticate('jwt', {session: false}),
+// to only route to the current users recipes?
+  // passport.authenticate('jwt', {session: false}),
   (req, res) => {
     Recipe.findByIdAndRemove(req.params.id, function(err, recipe) {
       if (err) {
