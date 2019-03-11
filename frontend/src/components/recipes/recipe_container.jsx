@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { connect } from 'react-redux';
 
 import Recipe from './recipe';
@@ -7,8 +7,8 @@ import { fetchAllRecipes } from '../../actions/user_recipe_actions';
 
 const mapStateToProps = state => {
   return({
-    user: state.session.user,       // NOT SURE YET
-    recipes: Object.values(state.recipes)
+    user: state.session.user,    
+    recipes: Object.values(state.user_recipes)
   });
 };
 
