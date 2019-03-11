@@ -1,16 +1,16 @@
 import * as UserRecipeApiUtil from '../util/user_recipe_api_util';
 
-export const RECEIVE_RECIPES = "RECEIVE_RECIPES";
-export const RECEIVE_RECIPE = "RECEIVE_RECIPE";
+export const RECEIVE_ALL_RECIPES = "RECEIVE_ALL_RECIPES";
+export const RECEIVE_USER_RECIPE = "RECEIVE_USER_RECIPE";
 export const REMOVE_RECIPE = "REMOVE_RECIPE";
 
 export const receiveRecipes = recipes => ({
-  type: RECEIVE_RECIPES,
+  type: RECEIVE_ALL_RECIPES,
   recipes
 });
 
 export const receiveRecipe = recipe => ({
-  type: RECEIVE_RECIPE,
+  type: RECEIVE_USER_RECIPE,
   recipe
 });
 
