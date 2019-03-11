@@ -10,14 +10,16 @@ class Recipe extends React.Component {
       recipes: []
     };
   }
-
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchAllRecipes();
   }
+  // componentWillMount() {
+  //   this.props.fetchAllRecipes();
+  // }
 
-  componentWillReceiveProps(newState) {
-    this.setState({ recipes: newState.recipes });
-  }
+  // componentWillReceiveProps(newState) {
+  //   this.setState({ recipes: newState.recipes });
+  // }
 
   render() {
     return (

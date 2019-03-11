@@ -6,8 +6,10 @@ class CreateRecipe extends React.Component {
 
     this.state = {
       title: "",
+      price: 0,
       instructions: "",
-      ingredients: ""
+      ingredients: "",
+      note: ""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
