@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './signup.css';
 
 class SignupForm extends React.Component {
@@ -69,7 +70,6 @@ class SignupForm extends React.Component {
           </div>
           <h2 className="signup-title">Sign Up</h2>
           {this.renderErrors()}
-          <br/>
           
           <div className="signup-name">
             <input type="text"
@@ -111,6 +111,10 @@ class SignupForm extends React.Component {
             className="password"
           />
           <input className="signup-form-button" type="submit" value="Submit" />
+
+          <h2 className="to-login">Already have an account? 
+            <Link className="redirect-login" to="/login"> Log in here.</Link>
+          </h2>
         </form>
       </div>
     );

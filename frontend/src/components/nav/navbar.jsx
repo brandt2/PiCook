@@ -45,6 +45,9 @@ class NavBar extends React.Component {
         <nav className="header-navbar">
 
           <div className="navbar-left">
+            <div className="logo-image">
+              <img src={require("./favicon.png")} alt=""/>
+            </div>
             <h1 className="navbar-logo"><Link to="/">PiCook</Link></h1>    
           </div>
 
