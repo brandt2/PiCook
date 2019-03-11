@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class LoginForm extends React.Component {
   constructor(props){
@@ -41,7 +42,7 @@ class LoginForm extends React.Component {
 
   renderErrors(){
     return(
-      <ul>
+      <ul className="signup-errors">
         {Object.keys(this.state.errors).map((error, i) => (
           <li key={`error-${i}`}>
             {this.state.errors[error]}
@@ -53,24 +54,33 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <input type="text"
-              value={this.state.username}
-              onChange={this.update('username')}
-              placeholder='Username'
-            />
-          <br/>
-            <input type="password"
-              value={this.state.password}
-              onChange={this.update('password')}
-              placeholder="Password"
-            />
-          <br/>
-          <input type="submit" value="Submit" />
-          {this.renderErrors()}
+      <div className="signup-form-container">
+        <form className="signup-form" onSubmit={this.handleSubmit}>
+          <div className="favicon">
+            <img src={require("./favicon.png")} alt="" />
           </div>
+          <h2 className="signup-title">Log In</h2>
+          {this.renderErrors()}
+
+          <input type="text"
+            value={this.state.username}
+            onChange={this.update('username')}
+            placeholder='Username'
+            className="username"
+          />
+          <input type="password"
+            value={this.state.password}
+            onChange={this.update('password')}
+            placeholder="Password"
+            className="password"
+          />
+
+          <input className="signup-form-button" type="submit" value="Submit" />
+
+          <h2 className="to-login">Already have an account?
+            <Link className="redirect-login" to="/signup"> Sign up here.</Link>
+          </h2>
+
         </form>
       </div>
     );
