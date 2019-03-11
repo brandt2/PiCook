@@ -1,6 +1,6 @@
 import {
-  RECEIVE_RECIPES,
-  RECEIVE_RECIPE,
+  RECEIVE_ALL_RECIPES,
+  RECEIVE_USER_RECIPE,
   REMOVE_RECIPE
 } from '../actions/user_recipe_actions';
 
@@ -11,10 +11,10 @@ const UserRecipesReducer = (oldState = {}, action) => {
 
   let state;
   switch(action.type) {
-    case RECEIVE_RECIPES:
+    case RECEIVE_ALL_RECIPES:
       return action.recipes;
-    case RECEIVE_RECIPE:
-      state = merge({}, oldState, {[action.recipe.id]: action.recipe});
+    case RECEIVE_USER_RECIPE:
+      state = merge({}, oldState, {[action.recipe._id]: action.recipe});
       return state;
     case REMOVE_RECIPE:
       state = merge({}, oldState);
