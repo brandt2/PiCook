@@ -37,13 +37,13 @@ export const getRecipesByDishName = dishName => (
     .catch(err => console.log(err))
 );
 
-export const fetchAllRecipes = () => dispatch = (
+export const fetchAllRecipes = () => dispatch => (
   RecipeApiUtil.fetchAllRecipes()
     .then(recipes => dispatch(receiveRecipes(recipes)))
     .catch(err => console.log(err))
 );
 
-export const fetchRecipe = (id) => dispatch = (
+export const fetchRecipe = (id) => dispatch => (
   RecipeApiUtil.fetchRecipe(id)
     .then(recipe => dispatch(receiveRecipe(recipe)))
     .catch(err => console.log(err))
