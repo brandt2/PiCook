@@ -18,7 +18,7 @@ class NavBar extends React.Component {
       return (
         <div>
           <Link to={'/recipes'}>All Recipes</Link>
-          <Link to={'/profile'}>Profile</Link>
+          <Link to={'/main'}>Main</Link>
           <button onClick={this.logoutUser}>Logout</button>
         </div>
       );
