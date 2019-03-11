@@ -21,13 +21,14 @@ ul {
 }
 
 .splash {
-  position: fixed;
+  /* position: fixed; */
+  position: relative;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
   z-index: -1;
-  background-image: url("food_splash.jpg");
+  /* background-image: url("food_splash.jpg"); */
   background-size: cover;
   width: 100%;
   height: 100vh;
@@ -36,4 +37,53 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.slide1, .slide2, .slide3 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.slide1 {
+  background-image: url("food_splash.jpg");
+  background-size: cover;
+  animation: fade 8s infinite;
+  -webkit-animation: fade 8s infinite;
+  z-index: -1;
+}
+
+.slide2 {
+  background-image: url("splash2.jpg");
+  background-size: cover;
+  animation: fade2 8s infinite;
+  -webkit-animation: fade2 8s infinite;
+  z-index: -1;
+}
+
+.slide3 {
+  background-image: url("splash3.jpg");
+  background-size: cover;
+  animation: fade3 8s infinite;
+  -webkit-animation: fade3 8s infinite;
+  z-index: -1;
+}
+
+@keyframes fade {
+  0%   {opacity:1}
+  33.333% { opacity: 0}
+  66.666% { opacity: 0}
+  100% { opacity: 1}
+}
+@keyframes fade2 {
+  0%   {opacity:0}
+  33.333% { opacity: 1}
+  66.666% { opacity: 0 }
+  100% { opacity: 0}
+}
+@keyframes fade3 {
+  0%   {opacity:0}
+  33.333% { opacity: 0}
+  66.666% { opacity: 1}
+  100% { opacity: 0}
 }
