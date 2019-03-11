@@ -11,7 +11,7 @@ import './index.css';
 import axios from 'axios';
 
 import { getRecipesByDishName } from './actions/recipe_actions';
-import { fetchRecipesByDishName } from './util/recipe_api_util';
+import { request } from './util/recipe_api_util';
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.axios = axios;
   window.dispatch = store.dispatch;
   window.getRecipesByDishName = getRecipesByDishName;
-  window.fetchRecipesByDishName = fetchRecipesByDishName;
+  // window.request = request;
   // Test end
 
   ReactDOM.render(<Root store={store} />, document.getElementById('root'));
