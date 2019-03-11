@@ -27,7 +27,7 @@ export const receiveRecipe = recipe => ({
 
 export const removeRecipe = recipe => ({
   type: REMOVE_RECIPE,
-  recipe
+  recipeId: recipe.id
 });
 
 
