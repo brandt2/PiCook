@@ -32,7 +32,7 @@ class LoginForm extends React.Component {
     e.preventDefault();
     
     let user = {
-      username = this.state.username,
+      username: this.state.username,
       password: this.state.password
     };
 
