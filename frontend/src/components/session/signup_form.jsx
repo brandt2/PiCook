@@ -110,7 +110,7 @@ class SignupForm extends React.Component {
             placeholder="Confirm Password"
             className="password"
           />
-          <input className="signup-form-button" type="submit" value="Submit" />
+          <input className="signup-form-button" type="submit" value="Sign Up" />
 
           <h2 className="to-login">Already have an account? 
             <Link className="redirect-login" to="/login"> Log in here.</Link>

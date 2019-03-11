@@ -75,7 +75,7 @@ class LoginForm extends React.Component {
             className="password"
           />
 
-          <input className="signup-form-button" type="submit" value="Submit" />
+          <input className="signup-form-button" type="submit" value="Log In" />
 
           <h2 className="to-login">Already have an account?
             <Link className="redirect-login" to="/signup"> Sign up here.</Link>

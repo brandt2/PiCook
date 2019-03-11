@@ -19,10 +19,10 @@ class NavBar extends React.Component {
       return (
         <div>
           <ul className="header-list">
-            <li><Link to={'/main'}>Main</Link></li>
-            <li><Link to={'/cuisines'}>Cuisines</Link></li>
-            <div>
-              <li><button onClick={this.logoutUser}>Logout</button></li>
+            <li className="main-button"><Link to={'/main'}>Main</Link></li>
+            <li className="cuisine-button"><Link to={'/cuisines'}>Cuisines</Link></li>
+            <div className="logout-button-div">
+              <li><button className="logout-button" onClick={this.logoutUser}>Logout</button></li>
             </div>
           </ul>
         </div>

@@ -131,3 +131,12 @@ input[type="password"], input[type="text"] {
 .redirect-login {
   color: blue;
 }
+
+input[type="submit"] {
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  transition: 0.4s;
+  background: rgb(115, 231, 125, 0.8);
+}

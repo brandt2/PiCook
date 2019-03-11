@@ -56,6 +56,18 @@
   font-weight: 500;
 }
 
+.main-button {
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.cuisine-button {
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: 500;
+}
+
 .login-button:hover {
   transition: 0.4s;
   color: rgb(115, 231, 125);
@@ -64,4 +76,31 @@
 .signup-button:hover {
   transition: 0.4s;
   color: rgb(115, 231, 125);
+}
+
+.main-button:hover {
+  transition: 0.4s;
+  color: rgb(115, 231, 125);
+}
+
+.cuisine-button:hover {
+  transition: 0.4s;
+  color: rgb(115, 231, 125);
+}
+
+.logout-button-div {
+  margin-right: 48px;
+}
+
+.logout-button {
+  background: rgb(255, 255, 255);
+  padding: 8px 20px;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  transition: 0.2s;
+  color: gray;
 }
