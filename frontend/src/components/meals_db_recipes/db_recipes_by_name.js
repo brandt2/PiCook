@@ -1,6 +1,7 @@
 import React from 'react';
 import DBRecipeBox from './db_recipe_box';
 import { withRouter, Link } from 'react-router-dom';
+import LoadingIcon from './loading_icon.js';
 import './db_recipes_by_name.css'
 
 class DBRecipesByName extends React.Component {
@@ -14,11 +15,18 @@ class DBRecipesByName extends React.Component {
     this.keyword = "Chicken"
   }
   componentDidMount() {
+    if (this.props.loading) {
+      return (
+        <LoadingIcon />
+      )
+    }
     this.props.getRecipesByDishName(this.keyword)
+
     // this.setState(this.props.getRecipesByDishName(this.keyword))
   }
   render() {
     // get search keyword from props from alec
+
     if (this.props.recipes.length === 0) {
       return (
         <div className="title-index">

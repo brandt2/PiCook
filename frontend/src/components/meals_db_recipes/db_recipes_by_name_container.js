@@ -5,7 +5,8 @@ import {
 import DBRecipesByName from './db_recipes_by_name';
 
 const mapStateToProps = state => ({
-  recipes:Object.values(state.recipes)
+  recipes:Object.values(state.recipes),
+  loading: state.loading.indexLoading
 })
 
 const mapDispatchToProps = dispatch => ({

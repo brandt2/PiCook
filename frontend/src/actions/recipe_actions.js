@@ -4,7 +4,9 @@ import { debug } from 'util';
 export const RECEIVE_RECIPES = "RECEIVE_RECIPES";
 export const RECEIVE_RECIPE = "RECEIVE_RECIPE";
 export const REMOVE_RECIPE = "REMOVE_RECIPE";
-
+export const START_LOADING_ALL_RECIPES = "START_LOADING_ALL_RECIPES";
+export const START_LOADING_RECIPE = "START_LOADING_RECIPE";
+// export const RECEIVE_RECIPE_ERRORS = "RECEIVE_RECIPE_ERRORS";
 
 export const receiveRecipes = payload => ({
   type: RECEIVE_RECIPES,
@@ -15,6 +17,19 @@ export const receiveRecipe = payload => ({
   type: RECEIVE_RECIPE,
   payload: payload.data.meals[0]
 })
+
+export const startLoadingAllRecipes = () => ({
+  type: START_LOADING_ALL_RECIPES
+});
+
+export const startLoadingRecipe = () => ({
+  type: START_LOADING_RECIPE
+});
+
+// export const receiveRecipeErrors = errors => ({
+//   type: RECEIVE_RECIPE_ERRORS,
+//   errors
+// })
 
 // export const receivePuppyRecipes = puppyRecipes => ({
 //   type: RECEIVE_PUPPY_RECIPES,
