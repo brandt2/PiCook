@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom';
 import { button, Link, NavLink } from 'react-router-dom';
 
 import './index-recipe.css';
-import '../recipe.css';
 
 class Recipe extends React.Component {
   constructor(props) {

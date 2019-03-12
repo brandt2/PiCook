@@ -40,7 +40,7 @@ export const getRecipesByDishName = food => dispatch => {
   return RecipeAPIs.fetchRecipesByDishName(food)
     .then(res => {
       return dispatch(receiveRecipes(res.data))
-    })
+    }).catch( err => console.log(err))
 }
 
 export const getRecipeById = id => dispatch => (

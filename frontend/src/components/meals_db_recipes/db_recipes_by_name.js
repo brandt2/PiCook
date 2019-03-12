@@ -9,23 +9,33 @@ class DBRecipesByName extends React.Component {
     super(props);
     // debugger
     this.state= {
-      recipes: []
+      recipes: [],
+      loading: true
     }
 
-    this.keyword = "chicken"
+    this.keyword = "Chicken"
   }
   componentDidMount() {
-    if (this.props.loading) {
-      return (
-        <LoadingIcon />
-      )
-    }
+    // let keyword = "Beef"
     this.props.getRecipesByDishName(this.keyword)
 
     // this.setState(this.props.getRecipesByDishName(this.keyword))
   }
+
+  componentDidUpdate({ loading }){
+    if (this.props.loading !== this.state.loading) {
+      this.setState( {loading: this.props.loading} )
+    }
+  }
+
   render() {
     // get search keyword from props from alec
+
+    if (this.state.loading === true) {
+      return (
+        <LoadingIcon />
+      )
+    }
 
     if (this.props.recipes.length === 0) {
       return (

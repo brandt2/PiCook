@@ -8,6 +8,7 @@ router.get("/:food",
     const food = req.params.food;
     return getRecipeByFood(food).then(response => {
       return res.json(response)
+        .catch( err => console.log(err))
     })
   }
 )
