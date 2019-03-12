@@ -32,13 +32,10 @@ app.use(bodyParser.json());
 // routes used
 app.use("/api/users", users);
 app.use("/api/recipes", recipes);
-<<<<<<< HEAD
 app.use("/api/db_recipes", dbRecipes);
 
 
-=======
 app.use("/api/image-upload", images);
 app.use("api/search-vision", labels);
->>>>>>> 00777fdd154e955383836f69c5093615f79a0c00
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
