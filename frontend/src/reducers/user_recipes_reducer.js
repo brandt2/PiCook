@@ -8,11 +8,13 @@ import merge from 'lodash/merge';
 
 const UserRecipesReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
-
-  let state;
+  let state = {};
   switch(action.type) {
     case RECEIVE_ALL_RECIPES:
-      return action.recipes;
+      action.recipes.forEach( recipe => {
+        state[recipe._id] = recipe;
+      });
+      return state;
     case RECEIVE_USER_RECIPE:
       state = merge({}, oldState, {[action.recipe._id]: action.recipe});
       return state;
