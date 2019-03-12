@@ -19,8 +19,9 @@ class NavBar extends React.Component {
       return (
         <div>
           <ul className="header-list">
+            <li className="main-button"><Link to={'/recipes'}>Recipes</Link></li>
             <li className="main-button"><Link to={'/main'}>Main</Link></li>
-            <li className="cuisine-button"><Link to={'/cuisines'}>Cuisines</Link></li>
+            <li className="cuisine-button"><Link to={'/categories'}>Categories</Link></li>
             <div className="logout-button-div">
               <li><button className="logout-button" onClick={this.logoutUser}>Logout</button></li>
             </div>
@@ -31,6 +32,9 @@ class NavBar extends React.Component {
       return (
         <div>
           <ul className="header-list">
+            <li className="main-button"><Link to={'/recipes'}>Recipes</Link></li>
+            <li className="main-button"><Link to={'/main'}>Main</Link></li>
+            <li className="cuisine-button"><Link to={'/categories'}>Categories</Link></li>
             <li className="signup-button"><Link to={'/signup'}>Signup</Link></li>
             <li className="login-button"><Link to={'/login'}>Login</Link></li>
           </ul>

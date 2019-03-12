@@ -46,7 +46,7 @@ class DBRecipeBox extends React.Component {
             <div className="recipe-title-div">
               <h3 className="recipe-title">{recipe.strMeal}</h3>
               <div>   
-                <Link to={{
+                <Link className="save-recipe-button" to={{
                   pathname: "/recipes/new",
                   recipe: recipe
                 }}>Save this recipe</Link>
