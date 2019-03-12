@@ -13,9 +13,9 @@ class Recipe extends React.Component {
   //   this.props.fetchAllRecipes();
   // }
 
-  // componentWillReceiveProps(newState) {
-  //   this.setState({ recipes: newState.recipes });
-  // }
+  componentWillReceiveProps(newState) {
+    this.setState({ recipes: newState.recipes });
+  }
 
   render() {
     return (
