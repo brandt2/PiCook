@@ -81,7 +81,7 @@ router.delete('/:id', (req, res) => {
       if (err) {
         res.json(err);
       } else {
-        res.json("Recipe has been successfully removed");
+        res.json(recipe.id);
       }
     });
   }
