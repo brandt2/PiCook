@@ -11,7 +11,7 @@ class DBRecipesByName extends React.Component {
       recipes: []
     }
 
-    this.keyword = "chicken"
+    this.keyword = "pork"
   }
   componentDidMount() {
     this.props.getRecipesByDishName(this.keyword)

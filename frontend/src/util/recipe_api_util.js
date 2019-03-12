@@ -8,7 +8,6 @@ export const fetchRecipesByDishName = food => (
 )
 
 export const fetchRecipeById = id => {
-  // return axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
   return axios.get(`api/db_recipes/food/${id}`)
 }
 
