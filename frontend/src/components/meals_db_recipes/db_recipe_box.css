@@ -1,0 +1,24 @@
+.outer-div {
+  margin-top: 64px;
+  display: flex;
+  justify-content: center;
+}
+
+.recipe-image-div {
+  background: aqua;
+
+}
+
+.recipe-image {
+  display: flex;
+  justify-content: center;
+}
+
+.each-recipe {
+  /* display: flex; */
+}
+
+.recipe-title {
+  display: flex;
+  justify-content: center;
+}

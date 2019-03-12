@@ -1,5 +1,6 @@
 import React from 'react';
 import DBIngredients from './db_ingredients';
+import "./db_recipe_box.css"
 
 class DBRecipeBox extends React.Component {
   constructor(props) {
@@ -30,20 +31,28 @@ class DBRecipeBox extends React.Component {
     ))
     
     return (
-      <div className="each-recipe">
-        <h3>{recipe.strMeal}</h3>
-        <img src={recipe.strMealThumb}></img>
-        <ol>
-          {instructions}
-        </ol>
+      <div className="outer-div">
         <div>
-          {ingredients}
-        </div>
-        <div>
-          {measures}
-        </div>
-        <div>
-          {recipe.strSource}
+          <div className="recipe-image-div">
+            <div className="recipe-image">
+              <img src={recipe.strMealThumb}></img>
+            </div>
+          </div>
+          <div className="recipe-title">
+            <h3>{recipe.strMeal}</h3>
+          </div>
+          <ol>
+            {instructions}
+          </ol>
+          <div>
+            {ingredients}
+          </div>
+          <div>
+            {measures}
+          </div>
+          <div>
+            {recipe.strSource}
+          </div>
         </div>
       </div>
     )
