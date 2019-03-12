@@ -1,0 +1,96 @@
+.outer-div {
+  margin-top: 64px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.some-div {
+  width: 100%;
+    background: rgb(244, 253, 240);
+
+}
+
+.recipe-image-div {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-image: url("background.jpg");
+  background-size: cover;
+  border-bottom: 1px solid rgb(207, 214, 217);
+}
+
+.recipe-image {
+  display: flex;
+  justify-content: center;
+  padding: 25px 0;
+  height: 500px;
+  width: 500px;
+}
+
+.recipe-image > img {
+  height: 500px;
+  width: 500px;
+  border-radius: 25px;
+}
+
+.recipe-info {
+  width: 1060px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.recipe-title-div {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.recipe-title {
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.recipe-instruction-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.instructions-div {
+  width: 500px;
+}
+
+.instructions-title {
+  padding: 10px;
+  font-size: 28px;
+  font-weight: 500;
+  border-bottom: 1px solid rgb(207, 214, 217);
+}
+
+table, th, td {
+  margin-top: 20px;
+  border: 1px solid black;
+  width: 500px;
+}
+
+th, td {
+  padding: 5px;
+}
+
+td {
+  text-align: center;
+  font-size: 16px;
+}
+
+.source-name {
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  border-bottom: 1px solid rgb(207, 214, 217);
+  width: 500px;
+}
+
+.source {
+  font-size: 14px;
+  margin: 10px;
+}
