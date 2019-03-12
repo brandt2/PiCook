@@ -4,11 +4,9 @@ import { button, Link, NavLink } from 'react-router-dom';
 
 class Recipe extends React.Component {
   constructor(props) {
+    // debugger
     super(props);
-
-    this.state = {
-      recipes: []
-    };
+    
   }
   componentDidMount() {
     this.props.fetchAllRecipes();
@@ -28,8 +26,8 @@ class Recipe extends React.Component {
           <div className="create-recipe">Create Recipe</div>
         </NavLink>
         <h2>All Recipes</h2>
-        {this.state.recipes.map( (recipe,idx) => (
-          <NavLink to={`/recipes/${recipe.id}`} key={idx} >
+        {this.props.recipes.map( (recipe,idx) => (
+          <NavLink to={`/recipes/${recipe._id}`} key={idx} >
             <div className="index-recipe-title">{recipe.title}</div>
           </NavLink>
         ))}
