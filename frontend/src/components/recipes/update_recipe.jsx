@@ -6,17 +6,17 @@ class UpdateRecipe extends React.Component {
     super(props);
 
     // ERRORS WHEN REFRESH AT UPDATE FORM
-    this.state = {
-      title: this.props.recipe.title || "",
-      price: this.props.recipe.price || 0,
-      instructions: this.props.recipe.instructions || "",
-      ingredients: this.props.recipe.ingredients || "",
-      note: this.props.recipe.note || ""
-    };
+    // this.state = {
+    //   title: this.props.recipe.title || "",
+    //   price: this.props.recipe.price || 0,
+    //   instructions: this.props.recipe.instructions || "",
+    //   ingredients: this.props.recipe.ingredients || "",
+    //   note: this.props.recipe.note || ""
+    // };
 
     // OR
     // NOTHING RENDERS WHEN REFRESH
-    // this.state = this.props.recipe;
+    this.state = this.props.recipe;
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
