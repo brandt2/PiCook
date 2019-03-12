@@ -20,6 +20,7 @@ const RecipesReducer = (state = {}, action) => {
     case RECEIVE_RECIPES:
       return selector(action.payload.meals);
     case RECEIVE_RECIPE:
+
       return Object.assign(newState, {[action.payload.idMeal]: action.payload});
     default:
       return state;
