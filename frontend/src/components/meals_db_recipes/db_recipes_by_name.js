@@ -2,7 +2,7 @@ import React from 'react';
 import DBRecipeBox from './db_recipe_box';
 import { withRouter, Link } from 'react-router-dom';
 import LoadingIcon from './loading_icon.js';
-import './db_recipes_by_name.css'
+import './db_recipes_by_name.css';
 
 class DBRecipesByName extends React.Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class DBRecipesByName extends React.Component {
       loading: true
     }
 
-    this.keyword = "Chicken"
+    this.keyword = "pork"
   }
   componentDidMount() {
     // let keyword = "Beef"
