@@ -1,4 +1,5 @@
 import * as RecipeAPIs from '../util/recipe_api_util';
+import { debug } from 'util';
 
 export const RECEIVE_RECIPES = "RECEIVE_RECIPES";
 export const RECEIVE_RECIPE = "RECEIVE_RECIPE";
@@ -7,12 +8,12 @@ export const REMOVE_RECIPE = "REMOVE_RECIPE";
 
 export const receiveRecipes = payload => ({
   type: RECEIVE_RECIPES,
-  payload: payload.data
+  payload
 });
 
-export const receiveRecipe = recipe => ({
+export const receiveRecipe = payload => ({
   type: RECEIVE_RECIPE,
-  recipe
+  payload: payload.data.meals[0]
 })
 
 // export const receivePuppyRecipes = puppyRecipes => ({
@@ -23,7 +24,7 @@ export const receiveRecipe = recipe => ({
 export const getRecipesByDishName = food => dispatch => (
   RecipeAPIs.fetchRecipesByDishName(food)
     .then(res => {
-      return dispatch(receiveRecipes(res))
+      return dispatch(receiveRecipes(res.data))
     })
   )
 
@@ -40,9 +41,9 @@ export const getRecipesByCat = food => dispatch => (
   )
 )
 
-export const getRecipesById = id => dispatch => (
+export const getRecipeById = id => dispatch => (
   RecipeAPIs.fetchRecipeById(id)
-    .then(res => (dispatch(receiveRecipes(res)))
+    .then(res => (dispatch(receiveRecipe(res)))
   )
 )
 
