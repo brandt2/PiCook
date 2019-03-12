@@ -4,9 +4,7 @@ import { button, Link, NavLink } from 'react-router-dom';
 
 class Recipe extends React.Component {
   constructor(props) {
-    // debugger
     super(props);
-    
   }
   componentDidMount() {
     this.props.fetchAllRecipes();
@@ -15,9 +13,9 @@ class Recipe extends React.Component {
   //   this.props.fetchAllRecipes();
   // }
 
-  // componentWillReceiveProps(newState) {
-  //   this.setState({ recipes: newState.recipes });
-  // }
+  componentWillReceiveProps(newState) {
+    this.setState({ recipes: newState.recipes });
+  }
 
   render() {
     return (

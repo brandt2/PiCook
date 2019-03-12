@@ -1,6 +1,10 @@
 import React from 'react';
 import DBIngredients from './db_ingredients';
+<<<<<<< HEAD
 import { Link } from 'react-router-dom';
+=======
+import "./db_recipe_box.css"
+>>>>>>> 00777fdd154e955383836f69c5093615f79a0c00
 
 class DBRecipeBox extends React.Component {
   constructor(props) {
@@ -24,28 +28,52 @@ class DBRecipeBox extends React.Component {
     )
 
     const ingredients = Object.keys(DBIngredients(recipe)).map((ing, i) => (
-      <li key={i}>{ing}</li>
+      <div key={i}>{ing}</div>
     ))
 
     const measures = Object.values(DBIngredients(recipe)).map((mea, i) => (
-      <li key={i}>{mea}</li>
+      <div key={i}>{mea}</div>
     ))
     
     return (
-      <div className="each-recipe">
-        <h3>{recipe.strMeal}</h3>
-        <img src={recipe.strMealThumb}></img>
-        <ol>
-          {instructions}
-        </ol>
-        <div>
-          {ingredients}
-        </div>
-        <div>
-          {measures}
-        </div>
-        <div>
-          {recipe.strSource}
+      <div className="outer-div">
+        <div className="some-div">
+          <div className="recipe-image-div">
+            <div className="recipe-image">
+              <img src={recipe.strMealThumb}></img>
+            </div>
+          </div>
+
+          <div className="recipe-info">
+            <div className="recipe-title-div">
+              <h3 className="recipe-title">{recipe.strMeal}</h3>
+            </div>
+            <div className="recipe-instruction-div">
+              <div className="instructions-div">
+                <h2 className="instructions-title">Instructions</h2>
+                <ol>
+                  {instructions}
+                </ol>
+              </div>
+              <div className="ingredients-section">
+                <h2 className="instructions-title">Ingredients</h2>
+                <table>
+                  <tr>
+                    <th>Ingredients</th>
+                    <th>Measurements</th>
+                  </tr>
+                  <tr>
+                    <td>{ingredients}</td>
+                    <td>{measures}</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h2 className="source-name">Source</h2>
+              <div className="source">{recipe.strSource}</div>
+            </div>
+          </div>
         </div>
 
         {/* if logged in, render button, else render login message */}

@@ -4,6 +4,9 @@ const app = express();
 const db = require('./config/keys').mongoURI;
 const bodyParser = require('body-parser');
 const passport = require("passport");
+const images = require("./routes/api/upload");
+const labels = require("./routes/api/vision");
+
 
 // Import routes
 const users = require("./routes/api/users");
@@ -25,11 +28,17 @@ require("./config/passport")(passport);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+
 // routes used
 app.use("/api/users", users);
 app.use("/api/recipes", recipes);
+<<<<<<< HEAD
 app.use("/api/db_recipes", dbRecipes);
 
 
+=======
+app.use("/api/image-upload", images);
+app.use("api/search-vision", labels);
+>>>>>>> 00777fdd154e955383836f69c5093615f79a0c00
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));

@@ -1,31 +1,38 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-class CreateRecipe extends React.Component {
+class UpdateRecipe extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      title: "",
-      price: 0,
-      instructions: "",
-      ingredients: "",
-      note: ""
-    };
+    // ERRORS WHEN REFRESH AT UPDATE FORM
+    // this.state = {
+    //   title: this.props.recipe.title || "",
+    //   price: this.props.recipe.price || 0,
+    //   instructions: this.props.recipe.instructions || "",
+    //   ingredients: this.props.recipe.ingredients || "",
+    //   note: this.props.recipe.note || ""
+    // };
+
+    // OR
+    // NOTHING RENDERS WHEN REFRESH
+    this.state = this.props.recipe;
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createRecipe({
+
+    this.props.updateRecipe({
       title: this.state.title, 
       instructions: this.state.instructions, 
       ingredients: this.state.ingredients,
       price: this.state.price,
-      note: this.state.note
+      note: this.state.note,
+      id: this.props.recipe._id
     });
-    this.props.history.push("/recipes");
+    this.props.history.push(`/recipes/${this.props.recipe._id}`);
   }
 
   update(field) {
@@ -35,9 +42,12 @@ class CreateRecipe extends React.Component {
   }
 
   render() {
+    if (!this.props.recipe) {
+      return null;
+    }
     return(
       <div>
-        <h1 className="create-recipe-header">Create new Recipe</h1>
+        <h1 className="create-recipe-header">Update Recipe</h1>
         <form onSubmit={this.handleSubmit}>
           <span className="required-fields">*</span>
           <span className="required-msg">Required fields</span>
@@ -87,11 +97,11 @@ class CreateRecipe extends React.Component {
               />
             </label>
           </div>
-          <input className="recipe-create" type="submit" value="CREATE" />
+          <input className="recipe-create" type="submit" value="UPDATE" />
         </form>
       </div>
     )
   }
 }
 
-export default withRouter(CreateRecipe);
+export default withRouter(UpdateRecipe);
