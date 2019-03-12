@@ -20,9 +20,9 @@ export const getImageURLByAWS = file => dispatch => {
     return dispatch(receiveImageURL(res));
   });
 };
-export const getLabelsByVision = request => dispatch => {
-  return SearchBoxAPIS.getLabelByImageUrl(request).then(res => {
-    console.log("getLabels by vision: " + res);
-    return dispatch(receiveLabel(res));
-  });
-};
+// export const getLabelsByVision = request => dispatch => {
+//   return SearchBoxAPIS.getLabelByImageUrl(request).then(res => {
+//     console.log("getLabels by vision: " + res);
+//     return dispatch(receiveLabel(res));
+//   });
+// };
