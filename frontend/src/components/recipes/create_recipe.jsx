@@ -21,7 +21,9 @@ class CreateRecipe extends React.Component {
     this.props.createRecipe({
       title: this.state.title, 
       instructions: this.state.instructions, 
-      ingredients: this.state.ingredients
+      ingredients: this.state.ingredients,
+      price: this.state.price,
+      note: this.state.note
     });
     this.props.history.push("/recipes");
   }
