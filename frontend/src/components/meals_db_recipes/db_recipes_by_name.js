@@ -13,7 +13,7 @@ class DBRecipesByName extends React.Component {
       loading: true
     }
 
-    this.keyword = "Chicken"
+    this.keyword = "Seafood"
   }
   componentDidMount() {
     // let keyword = "Beef"
