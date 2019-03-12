@@ -21,7 +21,9 @@ class DBRecipesByName extends React.Component {
     // get search keyword from props from alec
     if (this.props.recipes.length === 0) {
       return (
-        <div>Sorry, no recipes for {`${this.keyword}`}</div>
+        <div className="title-index">
+          <h2 className="found-title">Sorry, no recipes for {`${this.keyword}`}</h2>
+        </div>
       )
     } else {
       const recipeLink = this.props.recipes.map((recipe, index) =>
@@ -36,12 +38,14 @@ class DBRecipesByName extends React.Component {
         )
       )
       return (
-        <div className="yes-index-recipes">
-          <div>
-            <h2>Found Recipes</h2>
-          </div>
-          <div className="index-recipes">
-            {recipeLink}
+        <div className="index-background">
+          <div className="yes-index-recipes">
+            <div className="title-index">
+              <h2 className="found-title">Found Recipes</h2>
+            </div>
+            <div className="index-recipes">
+              {recipeLink}
+            </div>
           </div>
         </div>
       )
