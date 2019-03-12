@@ -6,16 +6,16 @@ import { fetchAllRecipes } from '../../actions/user_recipe_actions';
 
 
 const mapStateToProps = state => {
-  return({
+  return{
     user: state.session.user,    
     recipes: Object.values(state.user_recipes)
-  });
+  };
 };
 
 const mapDispatchToProps = dispatch => {
-  return({
+  return{
     fetchAllRecipes: () => dispatch(fetchAllRecipes())
-  });
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Recipe);

@@ -5,19 +5,17 @@ import { button, Link, NavLink } from 'react-router-dom';
 class Recipe extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      recipes: []
-    };
   }
-
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchAllRecipes();
   }
+  // componentWillMount() {
+  //   this.props.fetchAllRecipes();
+  // }
 
-  componentWillReceiveProps(newState) {
-    this.setState({ recipes: newState.recipes });
-  }
+  // componentWillReceiveProps(newState) {
+  //   this.setState({ recipes: newState.recipes });
+  // }
 
   render() {
     return (
@@ -26,8 +24,8 @@ class Recipe extends React.Component {
           <div className="create-recipe">Create Recipe</div>
         </NavLink>
         <h2>All Recipes</h2>
-        {this.state.recipes.map( (recipe,idx) => (
-          <NavLink to={`/recipes/${recipe.id}`} key={idx} >
+        {this.props.recipes.map( (recipe,idx) => (
+          <NavLink to={`/recipes/${recipe._id}`} key={idx} >
             <div className="index-recipe-title">{recipe.title}</div>
           </NavLink>
         ))}

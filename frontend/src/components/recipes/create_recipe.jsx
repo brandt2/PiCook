@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom'
 
 class CreateRecipe extends React.Component {
   constructor(props) {
@@ -6,8 +7,10 @@ class CreateRecipe extends React.Component {
 
     this.state = {
       title: "",
+      price: 0,
       instructions: "",
-      ingredients: ""
+      ingredients: "",
+      note: ""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,9 +21,11 @@ class CreateRecipe extends React.Component {
     this.props.createRecipe({
       title: this.state.title, 
       instructions: this.state.instructions, 
-      ingredients: this.state.ingredients
+      ingredients: this.state.ingredients,
+      price: this.state.price,
+      note: this.state.note
     });
-
+    this.props.history.push("/recipes");
   }
 
   update(field) {
@@ -89,4 +94,4 @@ class CreateRecipe extends React.Component {
   }
 }
 
-export default CreateRecipe;
+export default withRouter(CreateRecipe);

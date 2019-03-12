@@ -4,15 +4,20 @@ import { withRouter } from 'react-router-dom';
 class ShowRecipe extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = this.props.recipe;
+    // this.state = this.props.recipe;
   }
 
-  componentWillMount() {
-    this.props.fetchRecipe(this.state.recipe.id);
+  componentDidMount() {
+    this.props.fetchRecipe(this.props.match.params.id);
   }
+  // componentWillMount() {
+  //   this.props.fetchRecipe(this.props.match.params.id);
+  // }
 
   render() {
+    if (!this.props.recipe) {
+      return null;
+    }
     return (
       <div className="show-recipe">
         <div className="one-recipe">
@@ -25,6 +30,7 @@ class ShowRecipe extends React.Component {
         </div>
 
         <button>Delete Recipe</button>
+        <br/>
         <button>Update Recipe</button>
       </div>
     );

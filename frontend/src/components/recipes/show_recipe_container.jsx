@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { connect } from 'react-redux';
 
 import { 
@@ -6,23 +6,24 @@ import {
   updateRecipe,
   deleteRecipe
 } from '../../actions/user_recipe_actions';
-import ShowRecipe from './recipe';
+
+import ShowRecipe from './show_recipe';
 
 
 const mapStateToProps = (state, ownProps) => {
-  return({
+  return{
     user: state.session.user,    
-    recipes: Object.values(state.user_recipes),
+    // recipes: Object.values(state.user_recipes),
     recipe: state.user_recipes[ownProps.match.params.id]
-  });
+  };
 };
 
 const mapDispatchToProps = dispatch => {
-  return({
+  return{
     fetchRecipe: (id) => dispatch(fetchRecipe(id)),
     updateRecipe: (data) => dispatch(updateRecipe(data)),
     deleteRecipe: (id) => dispatch(deleteRecipe(id))
-  });
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShowRecipe);
