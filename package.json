@@ -29,15 +29,15 @@
     "multer-s3": "^2.9.0",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
-<<<<<<< HEAD
     "react-dropzone": "^10.0.0",
     "superagent": "^4.1.0",
-=======
->>>>>>> 00777fdd154e955383836f69c5093615f79a0c00
     "request": "^2.88.0",
     "validator": "^10.11.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.10"
+  },
+  "nodemonConfig": {
+    "ignore": ["frontend/*"]
   }
 }

@@ -18,6 +18,7 @@ const RecipesReducer = (state = {}, action) => {
   let newState = Object.assign({}, state);
   switch(action.type) {
     case RECEIVE_RECIPES:
+      if (action.payload.meals === null) return state;
       return selector(action.payload.meals);
     case RECEIVE_RECIPE:
 
