@@ -11,17 +11,17 @@ export const fetchRecipesByDishName = food => (
 
 export const fetchRecipesByIngredient = ingredient => {
   return axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`)
-    .then(res => res.data.meals)
+    // .then(res => res.data.meals)
 }
 
 export const fetchRecipeById = id => {
   return axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
-    .then(res => res.data.meals[0])
+    // .then(res => res.data.meals[0])
 }
 
 export const fetchRecipesByCat = cat => {
   return axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${cat}`)
-    .then(res => res.data.meals)
+    // .then(res => res.data.meals)
 }
 
 // export const fetchRecipesFromPuppy = food => {
