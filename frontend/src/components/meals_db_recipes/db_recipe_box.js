@@ -1,6 +1,10 @@
 import React from 'react';
 import DBIngredients from './db_ingredients';
+<<<<<<< HEAD
+import { Link } from 'react-router-dom';
+=======
 import "./db_recipe_box.css"
+>>>>>>> 00777fdd154e955383836f69c5093615f79a0c00
 
 class DBRecipeBox extends React.Component {
   constructor(props) {
@@ -16,7 +20,8 @@ class DBRecipeBox extends React.Component {
     if (recipe === undefined) return null;
     const instructions = (
       JSON.stringify(recipe.strInstructions)
-        .split('\\r\\n').map((paragraph, i) => (
+        // .split('\\r\\n').map((paragraph, i) => (
+        .split('\\r\\n\\r\\n' || '\\r\\n').map((paragraph, i) => (
           <li key={i}>{paragraph}</li>
         )
       )
@@ -70,6 +75,14 @@ class DBRecipeBox extends React.Component {
             </div>
           </div>
         </div>
+
+        {/* if logged in, render button, else render login message */}
+        <Link to={{
+          pathname: "/recipes/new",
+          recipe: recipe
+        }}>
+          <button>Save this recipe</button>
+        </Link>
       </div>
     )
   }

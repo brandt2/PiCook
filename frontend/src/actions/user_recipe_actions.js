@@ -4,44 +4,44 @@ export const RECEIVE_ALL_RECIPES = "RECEIVE_ALL_RECIPES";
 export const RECEIVE_USER_RECIPE = "RECEIVE_USER_RECIPE";
 export const REMOVE_RECIPE = "REMOVE_RECIPE";
 
-export const receiveRecipes = recipes => ({
+export const receiveAllRecipes = recipes => ({
   type: RECEIVE_ALL_RECIPES,
   recipes
 });
 
-export const receiveRecipe = recipe => ({
+export const receiveUserRecipe = recipe => ({
   type: RECEIVE_USER_RECIPE,
   recipe
 });
 
-export const removeRecipe = recipe => ({
+export const removeRecipe = id => ({
   type: REMOVE_RECIPE,
-  recipeId: recipe.id
+  recipeId: id
 });
 
 
 
 export const fetchAllRecipes = () => dispatch => (
   UserRecipeApiUtil.fetchAllRecipes()
-    .then(res => dispatch(receiveRecipes(res.data)))
+    .then(res => dispatch(receiveAllRecipes(res.data)))
     .catch(err => console.log(err))
 );
 
 export const fetchRecipe = (id) => dispatch => (
   UserRecipeApiUtil.fetchRecipe(id)
-    .then(res => dispatch(receiveRecipe(res.data)))
+    .then(res => dispatch(receiveUserRecipe(res.data)))
     .catch(err => console.log(err))
 );
 
 export const createRecipe = (data) => dispatch => (
   UserRecipeApiUtil.createRecipe(data)
-    .then(res => dispatch(receiveRecipe(res.data)))
+    .then(res => dispatch(receiveUserRecipe(res.data)))
     .catch(err => console.log(err))
 );
 
 export const updateRecipe = (data) => dispatch => (
   UserRecipeApiUtil.updateRecipe(data)
-    .then(res => dispatch(receiveRecipe(res.data)))
+    .then(res => dispatch(receiveUserRecipe(res.data)))
     .catch(err => console.log(err))
 );
 

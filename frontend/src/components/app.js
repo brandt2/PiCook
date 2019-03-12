@@ -10,10 +10,10 @@ import SignupFormContainer from './session/signup_form_container';
 import DBRecipesByNameContainer from './meals_db_recipes/db_recipes_by_name_container'
 import DBRecipeBoxContainer from './meals_db_recipes/db_recipe_box_container';
 
-import RecipeContainer from './recipes/recipe_container';
-import CreateRecipeContainer from './recipes/create_recipe_container';
-import ShowRecipeContainer from './recipes/show_recipe_container';
-import UpdateRecipeContainer from './recipes/update_recipe_container';
+import RecipeContainer from './recipes/index-recipe/recipe_container';
+import CreateRecipeContainer from './recipes/create-recipe/create_recipe_container';
+import ShowRecipeContainer from './recipes/show-recipe/show_recipe_container';
+import UpdateRecipeContainer from './recipes/update-recipe/update_recipe_container';
 
 const App = () => (
   <div>

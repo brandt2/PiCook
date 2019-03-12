@@ -7,12 +7,12 @@ import './db_recipes_by_name.css'
 class DBRecipesByName extends React.Component {
   constructor(props) {
     super(props);
-
+    // debugger
     this.state= {
       recipes: []
     }
 
-    this.keyword = "Chicken"
+    this.keyword = "chicken"
   }
   componentDidMount() {
     if (this.props.loading) {

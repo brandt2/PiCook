@@ -19,7 +19,8 @@ class ShowRecipe extends React.Component {
   handleDelete(e) {
     e.preventDefault();
 
-    this.props.deleteRecipe(this.props.recipe.id);
+    this.props.deleteRecipe(this.props.recipe._id);
+    this.props.history.push("/recipes");
   }
 
   render() {
@@ -29,12 +30,18 @@ class ShowRecipe extends React.Component {
     return (
       <div className="show-recipe">
         <div className="one-recipe">
-          <div className="recipe-title">Title:</div><div className="show-recipe-title">{this.props.recipe.title}</div>
-          <div className="show-recipe-price">${this.props.recipe.price}</div>
-          Instructions: <div className="show-recipe-instructions">{this.props.recipe.instructions}</div>
-          Ingredients: <div className="show-recipe-ingredients">{this.props.recipe.ingredients}</div>
-          Note: <div className="show-recipe-note">{this.props.recipe.note}</div>
-          Date: <div className="show-recipe-date">{this.props.recipe.date}</div>
+          <div className="recipe-title">Title:</div>
+            <div className="show-recipe-title">{this.props.recipe.title}</div>
+          <div className="recipe-price">Price:</div>
+            <div className="show-recipe-price">${this.props.recipe.price}</div>
+          <div className="recipe-instructions">Instructions:</div>
+            <div className="show-recipe-instructions">{this.props.recipe.instructions}</div>
+          <div className="recipe-ingredients">Ingredients:</div>
+            <div className="show-recipe-ingredients">{this.props.recipe.ingredients}</div>
+          <div className="recipe-note">Note:</div>
+            <div className="show-recipe-note">{this.props.recipe.note}</div>
+          <div className="recipe-date">Date:</div>
+            <div className="show-recipe-date">{this.props.recipe.date}</div>
         </div>
 
         <button onClick={this.handleDelete}>Delete Recipe</button>
