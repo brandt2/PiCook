@@ -1,12 +1,17 @@
 import React from 'react';
 import DBRecipeBox from './db_recipe_box';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
+import './db_recipes_by_name.css'
 
 class DBRecipesByName extends React.Component {
   constructor(props) {
     super(props);
 
-    this.keyword = "chicken"
+    this.state= {
+      recipes: []
+    }
+
+    this.keyword = "Chicken"
   }
   componentDidMount() {
     this.props.getRecipesByDishName(this.keyword)
@@ -19,17 +24,25 @@ class DBRecipesByName extends React.Component {
         <div>Sorry, no recipes for {`${this.keyword}`}</div>
       )
     } else {
-      const recipeLink = this.props.recipes.map((recipe, index) => 
+      const recipeLink = this.props.recipes.map((recipe, index) =>
         (
-          <Link className="each-recipe" to={`/dbmeals/${recipe.idMeal}`} key={recipe.idMeal}>
-            {recipe.strMeal}
-          </Link>
+          <div className="recipe-index-div">
+            <h1 className="recipe-index-title">{recipe.strMeal}</h1>
+            <Link to={`/dbmeals/${recipe.idMeal}`} key={recipe.idMeal}>
+              <img className="each-recipe" src={recipe.strMealThumb}/>
+              {/* {recipe.strMeal} */}
+            </Link>
+          </div>
         )
       )
       return (
         <div className="yes-index-recipes">
-          <h2>Recipes Found</h2>
-          {recipeLink}
+          <div>
+            <h2>Found Recipes</h2>
+          </div>
+          <div className="index-recipes">
+            {recipeLink}
+          </div>
         </div>
       )
     }
