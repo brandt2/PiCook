@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom';
 import { button, Link, NavLink } from 'react-router-dom';
 
 import './index-recipe.css';
-import '../recipe.css';
 
 class Recipe extends React.Component {
   constructor(props) {
@@ -26,14 +25,16 @@ class Recipe extends React.Component {
         <NavLink to={`/recipes/new`}>
           <div className="create-recipe">Create Recipe</div>
         </NavLink>
-        <div>All Recipes</div>
-        {this.props.recipes.map( (recipe,idx) => (
-          <NavLink to={`/recipes/${recipe._id}`} key={idx} >
-            <div className="index-recipe-title">{recipe.title}</div>
-            <div className="index-recipe-price">{recipe.price}</div>
-            <div className="index-recipe-date">{recipe.date}</div>
-          </NavLink>
-        ))}
+        <div className="all-recipes-msg">All Recipes</div>
+        <div className="all-recipes">
+          {this.props.recipes.map( (recipe,idx) => (
+            <NavLink to={`/recipes/${recipe._id}`} key={idx} >
+              <div className="index-recipe-title">{recipe.title}</div>
+              <div className="index-recipe-price">{recipe.price}</div>
+              <div className="index-recipe-date">{recipe.date}</div>
+            </NavLink>
+          ))}
+        </div>
       </div>
     );
   }
