@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom'
 
 class CreateRecipe extends React.Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class CreateRecipe extends React.Component {
       instructions: this.state.instructions, 
       ingredients: this.state.ingredients
     });
-
+    this.props.history.push("/recipes");
   }
 
   update(field) {
@@ -91,4 +92,4 @@ class CreateRecipe extends React.Component {
   }
 }
 
-export default CreateRecipe;
+export default withRouter(CreateRecipe);
