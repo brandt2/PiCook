@@ -3,7 +3,7 @@ import './loading_icon.css';
 
 const LoadingIcon = () => (
   <div>
-    <h1>Cooking in progress..</h1>
+    <h3 className="loading-text">Fetching in progress..</h3>
     <div id="cooking">
       <div class="bubble"></div>
       <div class="bubble"></div>
