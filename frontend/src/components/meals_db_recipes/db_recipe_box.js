@@ -3,6 +3,7 @@ import DBIngredients from './db_ingredients';
 import { Link } from 'react-router-dom';
 import "./db_recipe_box.css"
 
+
 class DBRecipeBox extends React.Component {
   constructor(props) {
     super(props);
