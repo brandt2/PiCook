@@ -12,7 +12,6 @@ router.get("/:food",
           if (response.meals === null) {
             return getRecipeByCategory(food).then(response => {
               if (response.meals === null) {
-                console.log("============HIT A DOG=============")
                 // return byCategory
               } else {
                 return res.json(response)

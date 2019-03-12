@@ -5,7 +5,6 @@ const DBIngredients = (props) => {
   for (let i = 1; i <= 20; i++) {
     let ingredient = `strIngredient${i}`;
     let measure = `strMeasure${i}`;
-    // debugger
     if (
       (props[ingredient] === "" || props[ingredient] === null)
       ||

@@ -7,7 +7,6 @@ import './db_recipes_by_name.css';
 class DBRecipesByName extends React.Component {
   constructor(props) {
     super(props);
-    // debugger
     this.state= {
       recipes: [],
       loading: true
