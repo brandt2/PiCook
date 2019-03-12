@@ -51,28 +51,28 @@ router.get("/cuisines/",
 
 function getRecipeByFood(food) {
   return new Promise((resolve, reject) => request(`https://www.themealdb.com/api/json/v1/1/search.php?s=${food}`, (error, res, body) => {
-    console.log(res);
+    console.log("Got response");
     resolve(JSON.parse(body));
   }))
 }
 
 function getRecipeById(id) {
   return new Promise((resolve, reject) => request(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`, (error, res, body) => {
-    console.log(res);
+    console.log("Got response");
     resolve(JSON.parse(body));
   }))
 }
 
 function getRecipeByCategory(cat) {
   return new Promise((resolve, reject) => request(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${cat}`, (error, res, body) => {
-    console.log(res);
+    console.log("Got response");
     resolve(JSON.parse(body));
   }))
 }
 
 function getRecipeByIngredient(food) {
   return new Promise((resolve, reject) => request(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${food}`, (error, res, body) => {
-    console.log(res);
+    console.log("Got response");
     resolve(JSON.parse(body));
   }))
 }
