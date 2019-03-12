@@ -8,6 +8,7 @@ const passport = require("passport");
 // Import routes
 const users = require("./routes/api/users");
 const recipes = require("./routes/api/recipes");
+const dbRecipes = require("./routes/api/db_recipes");
 
 mongoose
   .connect(db, { useNewUrlParser: true })
@@ -15,7 +16,6 @@ mongoose
   .catch(err => console.log(err));
 
 app.get("/", (req, res) => {
-  // debugger;
   res.send("Hello PiCook");
 });
 
@@ -28,6 +28,7 @@ app.use(bodyParser.json());
 // routes used
 app.use("/api/users", users);
 app.use("/api/recipes", recipes);
+app.use("/api/db_recipes", dbRecipes);
 
 
 const port = process.env.PORT || 5000;
