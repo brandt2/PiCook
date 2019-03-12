@@ -3,7 +3,7 @@ const multerS3 = require('multer-s3');
 const aws = require('aws-sdk');
 const express = require('express');
 const router = express.Router();
-const {bucket, accessKeyId, awsSecretAccessKey, region}  = require('../../config/keys');
+const {bucket, accessKeyId, awsSecretAccessKey, region, visionApiKey}  = require('../../config/keys');
 
 aws.config.update({
     secretAccessKey: awsSecretAccessKey,
@@ -42,7 +42,7 @@ router.post('/', function(req, res) {
                 ]
             });
         }
-
+        // debugger
         return res.json({'imageUrl': req.file.location});
     });
 });
