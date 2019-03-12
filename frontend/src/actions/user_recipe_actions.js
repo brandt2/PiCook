@@ -14,9 +14,9 @@ export const receiveUserRecipe = recipe => ({
   recipe
 });
 
-export const removeRecipe = recipe => ({
+export const removeRecipe = id => ({
   type: REMOVE_RECIPE,
-  recipeId: recipe.id
+  recipeId: id
 });
 
 
