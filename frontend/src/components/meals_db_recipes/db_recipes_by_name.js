@@ -1,24 +1,42 @@
 import React from 'react';
 import DBRecipeBox from './db_recipe_box';
 import { withRouter, Link } from 'react-router-dom';
-import './db_recipes_by_name.css'
+import LoadingIcon from './loading_icon.js';
+import './db_recipes_by_name.css';
 
 class DBRecipesByName extends React.Component {
   constructor(props) {
     super(props);
     // debugger
     this.state= {
-      recipes: []
+      recipes: [],
+      loading: true
     }
 
     this.keyword = "pork"
   }
   componentDidMount() {
+    // let keyword = "Beef"
     this.props.getRecipesByDishName(this.keyword)
+
     // this.setState(this.props.getRecipesByDishName(this.keyword))
   }
+
+  componentDidUpdate({ loading }){
+    if (this.props.loading !== this.state.loading) {
+      this.setState( {loading: this.props.loading} )
+    }
+  }
+
   render() {
     // get search keyword from props from alec
+
+    if (this.state.loading === true) {
+      return (
+        <LoadingIcon />
+      )
+    }
+
     if (this.props.recipes.length === 0) {
       return (
         <div className="title-index">
