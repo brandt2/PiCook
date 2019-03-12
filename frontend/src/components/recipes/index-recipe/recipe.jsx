@@ -21,17 +21,21 @@ class Recipe extends React.Component {
 
   render() {
     return (
-      <div className="index-recipes">
-        <NavLink to={`/recipes/new`}>
-          <div className="create-recipe">Create Recipe</div>
-        </NavLink>
+      <div className="index-all-recipes">
+        <span className="index-recipe-background"></span>
         <div className="all-recipes-msg">All Recipes</div>
+        <NavLink className="create-recipe" to={`/recipes/new`}>
+          <div className="create-recipe-msg">Create Recipe</div>
+        </NavLink>
+
         <div className="all-recipes">
           {this.props.recipes.map( (recipe,idx) => (
-            <NavLink to={`/recipes/${recipe._id}`} key={idx} >
-              <div className="index-recipe-title">{recipe.title}</div>
-              <div className="index-recipe-price">{recipe.price}</div>
-              <div className="index-recipe-date">{recipe.date}</div>
+            <NavLink className="single-recipe-link" to={`/recipes/${recipe._id}`} key={idx} >
+              <div className="single-recipe">
+                <div className="index-recipe-title">{recipe.title.slice(0,10)}</div>
+                <div className="avg-price">Avg Price:</div>
+                <div className="index-recipe-price">${recipe.price%1000000}</div>
+              </div>
             </NavLink>
           ))}
         </div>
