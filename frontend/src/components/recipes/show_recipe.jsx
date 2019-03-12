@@ -19,7 +19,7 @@ class ShowRecipe extends React.Component {
   handleDelete(e) {
     e.preventDefault();
 
-    this.props.deleteRecipe(this.props.recipe);
+    this.props.deleteRecipe(this.props.recipe._id);
     this.props.history.push("/recipes");
   }
 
