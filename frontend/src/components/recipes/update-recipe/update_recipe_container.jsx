@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import UpdateRecipe from './update_recipe';
 
-import { updateRecipe } from '../../actions/user_recipe_actions';
+import { updateRecipe } from '../../../actions/user_recipe_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
