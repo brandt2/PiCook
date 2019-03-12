@@ -5,7 +5,7 @@ import {
   fetchRecipe,
   updateRecipe,
   deleteRecipe
-} from '../../actions/user_recipe_actions';
+} from '../../../actions/user_recipe_actions';
 
 import ShowRecipe from './show_recipe';
 
