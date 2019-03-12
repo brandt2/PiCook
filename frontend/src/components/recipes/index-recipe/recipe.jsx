@@ -2,6 +2,10 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { button, Link, NavLink } from 'react-router-dom';
 
+<<<<<<< HEAD
+=======
+import './index-recipe.css';
+>>>>>>> master
 
 class Recipe extends React.Component {
   constructor(props) {
