@@ -4,12 +4,11 @@ import { withRouter } from 'react-router-dom';
 class ShowRecipe extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = this.props.recipe;
   }
 
   componentWillMount() {
-    this.props.fetchRecipe(this.state.recipe.id);
+    this.props.fetchRecipe(this.props.match.params.id);
   }
 
   render() {
