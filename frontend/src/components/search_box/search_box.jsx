@@ -97,7 +97,7 @@ class SearchBox extends React.Component {
             );
           })}
           <label>
-            <input type="submit" value="submit" />
+            <input className="submit-button" type="submit" value="submit" />
           </label>
         </Form>
       </div>
@@ -129,13 +129,13 @@ class SearchBox extends React.Component {
 
   render() {
     return (
-      <div className="search-img-box">
+      <div >
         <Dropzone onDrop={acceptedFiles => this.handleDrop(acceptedFiles)}>
           {({ getRootProps, getInputProps }) => (
             <section>
               <div {...getRootProps()}>
                 <input {...getInputProps()} />
-                <p>Drag 'n' drop some files here, or click to select files</p>
+                <p className="search-img-box">Drag and drop a file here, or click to select file</p>
               </div>
             </section>
           )}
@@ -147,9 +147,9 @@ class SearchBox extends React.Component {
           style={customStyles}
           contentLabel="About your images."
         >
-          <h2 className="modal-seach-box-header">About the Image</h2>
+          <h2 className="modal-seach-box-header">Pick best choice</h2>
           <div>{this.infoList()}</div>
-          <button onClick={this.closeModal}>close</button>
+          <button className="submit-button" onClick={this.closeModal}>close</button>
         </Modal>
       </div>
     );
