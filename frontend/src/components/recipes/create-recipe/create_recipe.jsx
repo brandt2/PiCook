@@ -18,6 +18,8 @@ class CreateRecipe extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  // create recipe in index page won't work cause we are using this component to create a recipe from a search
+  // prefilled data from mealDB
   componentDidMount() {
     this.props.getRecipeById(this.props.match.params.id);
     const recipe = this.props.recipe;
