@@ -21,14 +21,12 @@ ul {
 }
 
 .splash {
-  /* position: fixed; */
   position: relative;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
-  z-index: -1;
-  /* background-image: url("food_splash.jpg"); */
+  /* z-index: -2; */
   background-size: cover;
   width: 100%;
   height: 100vh;
@@ -50,7 +48,7 @@ ul {
   background-size: cover;
   animation: fade 21s infinite;
   -webkit-animation: fade 21s infinite;
-  z-index: -1;
+  z-index: -2;
 }
 
 .slide2 {
@@ -58,7 +56,7 @@ ul {
   background-size: cover;
   animation: fade2 21s infinite;
   -webkit-animation: fade2 21s infinite;
-  z-index: -1;
+  z-index: -2;
 }
 
 .slide3 {
@@ -66,7 +64,7 @@ ul {
   background-size: cover;
   animation: fade3 21s infinite;
   -webkit-animation: fade3 21s infinite;
-  z-index: -1;
+  z-index: -2;
 }
 
 @keyframes fade {
@@ -86,4 +84,47 @@ ul {
   33.333% { opacity: 0}
   66.666% { opacity: 1}
   100% { opacity: 0}
+}
+
+.wrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search {
+  width: 450px;
+  height: 46px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-term {
+  width: 100%;
+  padding: 5px;
+  height: 35px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  color: #9DBFAF;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.search-term:focus{
+  /* color: #00B4CC; */
+  color: black;
+}
+
+.search-button {
+  width: 40px;
+  height: 43.5px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
 }

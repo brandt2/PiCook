@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { button, Link, NavLink } from 'react-router-dom';
+import './show-recipe.css';
 
 class ShowRecipe extends React.Component {
   constructor(props) {
@@ -29,26 +30,41 @@ class ShowRecipe extends React.Component {
     }
     return (
       <div className="show-recipe">
+        <span className="show-recipe-background"></span>
         <div className="one-recipe">
-          <div className="recipe-title">Title:</div>
-            <div className="show-recipe-title">{this.props.recipe.title}</div>
-          <div className="recipe-price">Price:</div>
-            <div className="show-recipe-price">${this.props.recipe.price}</div>
-          <div className="recipe-instructions">Instructions:</div>
-            <div className="show-recipe-instructions">{this.props.recipe.instructions}</div>
-          <div className="recipe-ingredients">Ingredients:</div>
-            <div className="show-recipe-ingredients">{this.props.recipe.ingredients}</div>
-          <div className="recipe-note">Note:</div>
-            <div className="show-recipe-note">{this.props.recipe.note}</div>
-          <div className="recipe-date">Date:</div>
-            <div className="show-recipe-date">{this.props.recipe.date}</div>
+          <div className="nested-flex">
+            <div className="show-label-wrapper">
+              <div className="recipe-label">Title:</div>
+              <div className="show-recipe-title">{this.props.recipe.title}</div>
+            </div>
+            <div className="show-label-wrapper">
+              <div className="recipe-label">Price:</div>
+              <div className="show-recipe-price">${this.props.recipe.price}</div>
+            </div>
+            <div className="show-label-wrapper">
+              <div className="recipe-label">Instructions:</div>
+              <div className="show-recipe-instructions">{this.props.recipe.instructions}</div>
+            </div>
+            <div className="show-label-wrapper">
+              <div className="recipe-label">Ingredients:</div>
+              <div className="show-recipe-ingredients">{this.props.recipe.ingredients}</div>
+            </div>
+            <div className="show-label-wrapper">
+              <div className="recipe-label">Note:</div>
+              <div className="show-recipe-note">{this.props.recipe.note}</div>
+            </div>
+            <div className="show-label-wrapper">
+              <div className="recipe-label">Date:</div>
+              <div className="show-recipe-date">{this.props.recipe.date}</div>
+            </div>
+            <div className="show-buttons">
+              <button className="recipe-delete-button" onClick={this.handleDelete}>Delete Recipe</button>
+              <NavLink to={`/recipes/update/${this.props.recipe._id}`} >
+                <div className="recipe-update-button">Update Recipe</div>
+              </NavLink>
+            </div>
+          </div>
         </div>
-
-        <button onClick={this.handleDelete}>Delete Recipe</button>
-        <br/>
-        <NavLink to={`/recipes/update/${this.props.recipe._id}`} >
-          <div className="index-recipe-title">Update Recipe</div>
-        </NavLink>
       </div>
     );
   }
