@@ -27,7 +27,7 @@ ul {
   bottom: 0;
   right: 0;
   left: 0;
-  z-index: -1;
+  z-index: -2;
   /* background-image: url("food_splash.jpg"); */
   background-size: cover;
   width: 100%;
@@ -89,6 +89,14 @@ ul {
 }
 
 .testing-things-out {
-  z-index: 1;
+  z-index: 4;
   background: aqua;
+}
+
+.tester1 > input {
+  z-index: 2;
+}
+
+.tester2 {
+  z-index: 2;
 }

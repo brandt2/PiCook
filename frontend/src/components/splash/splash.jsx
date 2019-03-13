@@ -16,7 +16,7 @@ class Splash extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.history.push(`/dbmeals/${e.currentTarget.value}`)
+    this.props.history.push(`/dbmeals/${this.state.search}`)
   }
 
   handleUpdate(e){
@@ -30,8 +30,8 @@ class Splash extends React.Component {
         <div className='slide2'></div>
         <div className='slide3'></div>
         <div className="testing-things-out">
-          <form onSubmit={this.handleSubmit}>
-            <input type="text" onChange={this.handleUpdate}/>
+          <form className="tester1" onSubmit={this.handleSubmit}>
+            <input className="tester2" type="text" onChange={this.handleUpdate}/>
           </form>
           <h1>Find your Recipe</h1>
           <br />
