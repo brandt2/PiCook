@@ -27,7 +27,6 @@ class DBRecipesByName extends React.Component {
 
   render() {
     // get search keyword from props from alec
-    debugger
     if (this.state.loading === true) {
       return (
         <LoadingIcon />
