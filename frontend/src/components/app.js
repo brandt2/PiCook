@@ -3,6 +3,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Switch, Route } from 'react-router-dom';
 import NavBarContainer from './nav/navbar_container';
 import Splash from './splash/splash';
+// import SearchBar from './search_bar/search_bar';
 
 import MainPage from './main/main_page';
 import LoginFormContainer from './session/login_form_container';
@@ -21,6 +22,7 @@ const App = () => (
   <div>
     <NavBarContainer />
     <Route exact path="/" component={Splash} />
+    {/* <Route exact path="/" component={SearchBar} /> */}
     <Switch>
       <AuthRoute exact path="/" component={MainPage} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />

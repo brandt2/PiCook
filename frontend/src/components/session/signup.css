@@ -55,14 +55,17 @@
 
 .firstname {
   width: 130px;
+  border-radius: 4px;
 }
 
 .firstname:focus {
   border: 1px solid rgb(115, 231, 125);
+  border-radius: 4px;
 }
 
 .lastname {
   width: 130px;
+  border-radius: 4px;
 }
 
 .lastname:focus {
@@ -72,6 +75,7 @@
 .username {
   width: 280px;
   margin-bottom: 10px;
+  border-radius: 4px;
 }
 
 .username:focus {
@@ -81,6 +85,7 @@
 .email {
   width: 280px;
   margin-bottom: 10px;
+  border-radius: 4px;
 }
 
 .email:focus {
@@ -90,6 +95,7 @@
 .password {
   width: 280px;
   margin-bottom: 10px;
+  border-radius: 4px;
 }
 
 .password:focus {
@@ -99,7 +105,6 @@
 input[type="password"], input[type="text"] {
   border: 1px solid rgb(167, 167, 167);
   padding: 5px;
-  border-radius: 4px;
 }
 
 .signup-form-button {
