@@ -7,18 +7,16 @@ import './db_recipes_by_name.css';
 class DBRecipesByName extends React.Component {
   constructor(props) {
     super(props);
+    
     this.state= {
       recipes: [],
       loading: true
     }
 
-    this.keyword = "pork"
+    // this.keyword = "pork"
   }
   componentDidMount() {
-    // let keyword = "Beef"
-    this.props.getRecipesByDishName(this.keyword)
-
-    // this.setState(this.props.getRecipesByDishName(this.keyword))
+    this.props.getRecipesByDishName(this.props.match.params.food)
   }
 
   componentDidUpdate({ loading }){
@@ -29,7 +27,6 @@ class DBRecipesByName extends React.Component {
 
   render() {
     // get search keyword from props from alec
-
     if (this.state.loading === true) {
       return (
         <LoadingIcon />

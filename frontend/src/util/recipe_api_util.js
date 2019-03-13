@@ -3,7 +3,7 @@ import axios from 'axios';
 export const fetchRecipesByDishName = food => (
   axios({
     method: 'get',
-    url: `/api/db_recipes/${food}`,
+    url: `api/db_recipes/${food}/recipes`,
   })
 )
 
@@ -16,7 +16,10 @@ export const fetchRecipesByIngredient = ingredient => {
     // .then(res => res.data.meals)
 }
 
-export const fetchRecipesByCat = cat => {
-  return axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${cat}`)
-    // .then(res => res.data.meals)
+export const fetchRecipesByCategory = category => {
+  return axios.get(`/categories/${category}`)
+}
+
+export const fetchAllCategories = () => {
+  return axios.get(`api/db_recipes/categories`)
 };
