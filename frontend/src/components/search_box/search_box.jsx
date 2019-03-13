@@ -28,7 +28,8 @@ class SearchBox extends React.Component {
     this.state = {
       isShowList: false,
       modalIsOpen: false,
-      textContent: ""
+      textContent: "",
+      loading: true
     };
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
@@ -80,7 +81,7 @@ class SearchBox extends React.Component {
           onSubmit={this.handleSubmit}
         >
           <Form.Field>
-            Selected: <b>{this.state.textContent}</b>
+            Please Select: <b>{this.state.textContent}</b>
           </Form.Field>
           {this.props.visionResponses.map(key => {
             return (
@@ -105,7 +106,7 @@ class SearchBox extends React.Component {
   }
 
   infoList() {
-    if (this.props.visionResponses)
+    if (this.props.visionResponses){
       if (
         this.props.visionResponses &&
         this.props.visionResponses.length !== 0
@@ -120,11 +121,12 @@ class SearchBox extends React.Component {
           <div className="search-box-meal-not-found">
             <p>
               Sorry, we don't have the information of your meal, please either
-              retry or tell me the name.
+              retry or use the search bar.
             </p>
           </div>
         );
       }
+    }
   }
 
   render() {
@@ -147,7 +149,7 @@ class SearchBox extends React.Component {
           style={customStyles}
           contentLabel="About your images."
         >
-          <h2 className="modal-seach-box-header">Pick best choice</h2>
+          {/* <h2 className="modal-seach-box-header">Pick best choice</h2> */}
           <div>{this.infoList()}</div>
           <button className="submit-button" onClick={this.closeModal}>close</button>
         </Modal>

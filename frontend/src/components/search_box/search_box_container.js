@@ -3,7 +3,6 @@ import SearchBox from './search_box';
 import {getResultFromVision} from '../../actions/search_box_action';
 
 
-
 const mapStateToProps = (state, ownProps) => {
     return {
         visionResponses: state.searchBox.visionResponses.map(el => {
@@ -14,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        getResultFromVision: (file) => dispatch(getResultFromVision(file)),
+        getResultFromVision: (file) => dispatch(getResultFromVision(file))
     };
 };
 
