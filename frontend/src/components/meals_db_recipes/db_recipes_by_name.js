@@ -8,7 +8,7 @@ class DBRecipesByName extends React.Component {
   constructor(props) {
     super(props);
     
-    this.state= {
+    this.state = {
       recipes: [],
       loading: true
     }
