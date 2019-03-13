@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import './create-recipe.css';
+import DBIngredients from '../../meals_db_recipes/db_ingredients';
 
 class CreateRecipe extends React.Component {
   constructor(props) {
@@ -15,6 +16,15 @@ class CreateRecipe extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.getRecipeById(this.props.match.params.id);
+    const recipe = this.props.recipe;
+    this.setState({ 
+      title: recipe.strMeal,
+      instructions: recipe.strInstructions,
+    })
   }
   
   handleSubmit(e) {
@@ -36,6 +46,11 @@ class CreateRecipe extends React.Component {
   }
 
   render() {
+    const recipe = this.props.recipe;
+    // const ingredients = Object.keys(DBIngredients(recipe)).map((ing, i) => (
+    //   <div key={i}>{ing}</div>
+    // ))
+    
     return(
       <div className="create-recipe-comp">
         <span className="create-recipe-background"></span>

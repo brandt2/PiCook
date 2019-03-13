@@ -30,7 +30,7 @@ const App = () => (
       <Route path="/categories/:cat" component={DBRecipesByCategoriesContainer} />
       <Route path="/categories" component={DBCategoriesContainer} />
       
-      <ProtectedRoute path="/recipes/new" component={CreateRecipeContainer} />
+      <ProtectedRoute path="/recipes/new/:id" component={CreateRecipeContainer} />
       <ProtectedRoute path="/recipes/update/:id" component={UpdateRecipeContainer} />
       <ProtectedRoute exact path="/recipes/:id" component={ShowRecipeContainer} />
       <ProtectedRoute path="/recipes" component={RecipeContainer} />
