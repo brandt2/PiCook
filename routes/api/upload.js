@@ -42,7 +42,6 @@ router.post('/', function(req, res) {
                 ]
             });
         }
-        // debugger
         return res.json({'imageUrl': req.file.location});
     });
 });

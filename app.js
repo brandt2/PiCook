@@ -6,7 +6,14 @@ const bodyParser = require('body-parser');
 const passport = require("passport");
 const images = require("./routes/api/upload");
 const labels = require("./routes/api/vision");
+const path = require('path');
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('frontend/build'));
+  app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  })
+}
 
 // Import routes
 const users = require("./routes/api/users");
