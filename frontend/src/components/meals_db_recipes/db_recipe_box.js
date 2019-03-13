@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import LoadingIcon from './loading_icon.js';
 import "./db_recipe_box.css";
 
-
 class DBRecipeBox extends React.Component {
   constructor(props) {
     super(props);
@@ -36,10 +35,9 @@ class DBRecipeBox extends React.Component {
     if (recipe === undefined || recipe.strInstructions === undefined) return null;
     const instructions = (
       JSON.stringify(recipe.strInstructions)
-        // .split('\\r\\n').map((paragraph, i) => (
-        .split('\\r\\n\\r\\n' || '\\r\\n').map((paragraph, i) => (
-          <li key={i}>{paragraph}</li>
-        )
+        .split('\\r\\n').map((paragraph, i) => {
+          if (paragraph !== "") return <li key={i}>{paragraph}</li>
+        }
       )
     )
 

@@ -36,7 +36,7 @@ class DBRecipesByName extends React.Component {
     if (this.props.recipes.length === 0) {
       return (
         <div className="title-index">
-          <h2 className="found-title">Sorry, no recipes for {`${this.keyword}`}</h2>
+          <h2 className="found-title">Sorry, no recipes for {`${this.props.match.params.food}`}</h2>
         </div>
       )
     } else {
