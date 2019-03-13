@@ -21,10 +21,12 @@ class CreateRecipe extends React.Component {
   componentDidMount() {
     this.props.getRecipeById(this.props.match.params.id);
     const recipe = this.props.recipe;
-    this.setState({ 
-      title: recipe.strMeal,
-      instructions: recipe.strInstructions,
-    })
+    if (recipe) {
+      this.setState({
+        title: recipe.strMeal || "",
+        instructions: recipe.strInstructions || "",
+      })
+    }
   }
   
   handleSubmit(e) {
@@ -50,7 +52,7 @@ class CreateRecipe extends React.Component {
     // const ingredients = Object.keys(DBIngredients(recipe)).map((ing, i) => (
     //   <div key={i}>{ing}</div>
     // ))
-    
+    if (recipe === undefined) return null;
     return(
       <div className="create-recipe-comp">
         <span className="create-recipe-background"></span>

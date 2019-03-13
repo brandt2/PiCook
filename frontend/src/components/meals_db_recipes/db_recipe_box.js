@@ -18,7 +18,6 @@ class DBRecipeBox extends React.Component {
     const instructions = (
       JSON.stringify(recipe.strInstructions)
         .split('\\r\\n').map((paragraph, i) => {
-        // .split('\\r\\n\\r\\n' || '\\r\\n').map((paragraph, i) => (
           if (paragraph !== "") return <li key={i}>{paragraph}</li>
         }
       )
