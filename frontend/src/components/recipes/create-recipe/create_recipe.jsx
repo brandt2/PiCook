@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import './create-recipe.css';
 
 class CreateRecipe extends React.Component {
   constructor(props) {
@@ -7,7 +8,7 @@ class CreateRecipe extends React.Component {
 
     this.state = {
       title: "",
-      price: 0,
+      price: "",
       instructions: "",
       ingredients: "",
       note: ""
@@ -36,59 +37,66 @@ class CreateRecipe extends React.Component {
 
   render() {
     return(
-      <div>
-        <h1 className="create-recipe-header">Create new Recipe</h1>
-        <form onSubmit={this.handleSubmit}>
-          <span className="required-fields">*</span>
-          <span className="required-msg">Required fields</span>
+      <div className="create-recipe-comp">
+        <span className="create-recipe-background"></span>
+        <div className="create-recipe-form">
+        <div className="create-recipe-header">New Recipe</div>
+          <form className="create-recipe-inputs" onSubmit={this.handleSubmit}>
+            <span className="required-small">*</span>
+            <span className="required-msg">Required fields</span>
 
-          <div className="new-recipe-form">
-            <label>
-              <span className="required">*</span>
-              <input type="text"
-                className="new-recipe-title"
-                value={this.state.title}
-                onChange={this.update('title')}
-                placeholder="Title"
-              />
-            </label>
-            <label>
-              <input type="text"
-                className="new-recipe-price"
-                value={this.state.price}
-                onChange={this.update('price')}
-                placeholder="Price"
-              />
-            </label>
-            <label>
-              <span className="required">*</span>
-              <input type="text"
-                className="new-recipe-instructions"
-                value={this.state.instructions}
-                onChange={this.update('instructions')}
-                placeholder="Instructions"
-              />
-            </label>
-            <label>
-              <span className="required">*</span>
-              <input type="text"
-                className="new-recipe-ingredients"
-                value={this.state.ingredients}
-                onChange={this.update('ingredients')}
-                placeholder="Ingredients"
-              />
-            </label>
-            <label>
-              <input type="text"
-                className="new-recipe-note"
-                value={this.state.note}
-                onChange={this.update('note')}
-                placeholder="Note"
-              />
-            </label>
-          </div>
-          <input className="recipe-create" type="submit" value="CREATE" />
-        </form>
+            <div className="new-recipe-form">
+              <div className="flex-small-inputs">
+                <label className="new-title-label">
+                  <span className="required-small">*</span>
+                  <input type="text"
+                    className="new-recipe-title new-recipe-input"
+                    value={this.state.title}
+                    onChange={this.update('title')}
+                    placeholder="Title"
+                  />
+                </label>
+                <label className="new-price-label">
+                  <input type="text"
+                    className="new-recipe-price new-recipe-input input-not-required"
+                    value={this.state.price}
+                    onChange={this.update('price')}
+                    placeholder="Price"
+                  />
+                </label>
+              </div>
+              <label className="new-instructions-label">
+                <span className="required-large">*</span>
+                <textarea
+                  className="new-recipe-instructions new-recipe-input input-large"
+                  value={this.state.instructions}
+                  onChange={this.update('instructions')}
+                  placeholder="Instructions"
+                />
+              </label>
+              <label className="new-ingredients-label">
+                <span className="required-large">*</span>
+                <textarea
+                  className="new-recipe-ingredients new-recipe-input input-large"
+                  value={this.state.ingredients}
+                  onChange={this.update('ingredients')}
+                  placeholder="Ingredients"
+                />
+              </label>
+              <label className="new-note-label">
+                <textarea
+                  className="new-recipe-note new-recipe-input input-not-required input-large"
+                  value={this.state.note}
+                  onChange={this.update('note')}
+                  placeholder="Note"
+                />
+              </label>
+            </div>
+            <div className="create-button-wrapper">
+              <input className="recipe-create" type="submit" value="CREATE" />
+            </div>
+          </form>
+        </div>
       </div>
     )
   }
