@@ -29,13 +29,15 @@ class Splash extends React.Component {
         <div className='slide1'></div>
         <div className='slide2'></div>
         <div className='slide3'></div>
-        <div className="testing-things-out">
-          <form className="tester1" onSubmit={this.handleSubmit}>
-            <input className="tester2" type="text" onChange={this.handleUpdate}/>
+        <div className="wrap">
+          <form className="search" onSubmit={this.handleSubmit}>
+            <input
+              className="search-term" 
+              type="text" 
+              onChange={this.handleUpdate}
+              placeholder="What food do you want to make?"/>
+            <button className="search-button" type="submit"><i class="fas fa-search"></i></button>
           </form>
-          <h1>Find your Recipe</h1>
-          <br />
-          <h3>Join the PiCook community</h3>
         </div>
       </div>
     )
