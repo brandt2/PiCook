@@ -1,11 +1,10 @@
 import {
-    RECEIVE_IMAGE_URL,
-    RECEIVE_LABEL
-} from '../actions/seach_box_action';
+    RECEIVE_LABELS
+} from '../actions/search_box_action';
 
 let _nullState = {
     imageUrl: null,
-    visonResponses: []
+    visionResponses: []
 };
 
 const SearchBoxReducer = (oldState = _nullState, action) => {
@@ -13,11 +12,8 @@ const SearchBoxReducer = (oldState = _nullState, action) => {
 
     let nextState = Object.assign({}, oldState);
     switch (action.type) {
-        case RECEIVE_IMAGE_URL:
-            nextState.imageUrl = action.payload.imageUrl;
-            return nextState;
-        case RECEIVE_LABEL:
-            nextState.visonResponses = action.payload.responses;
+        case RECEIVE_LABELS:
+            nextState.visionResponses = action.payload.data;
             return nextState;
         default:
             return oldState;
