@@ -1,0 +1,138 @@
+    /* ALL */
+.create-recipe-comp {
+  overflow: scroll;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+    /* BACKGROUND */
+.create-recipe-background {
+  background-image: url("ingredients1.jpg");
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  position: fixed;
+  /* opacity: 0.8; */
+}
+
+    /* RECIPE HEADER  */
+.create-recipe-header {
+  position: relative;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 600;
+  padding-top: 10px;
+}
+
+    /* CREATE FORM */
+.create-recipe-form {
+  align-self: center;
+  position: relative;
+  margin-top: 100px;
+  padding: 20px;
+  background-color: white;
+  height: 600px;
+  width: 600px;
+  box-shadow: 0px 0px 2px 1px lightgray;
+  border-radius: 5px;
+
+}
+
+.create-recipe-inputs {
+  margin-top: 20px;
+  padding: 15px;
+
+  /* border: 1px solid rgba(0, 0, 0, 0.123);
+  border-radius: 5px; */
+}
+
+    /* REQUIRED FIELDS */
+.required-small {
+  font-size: 18px;
+  color: red;
+  position: relative;
+  bottom: -4px;
+  padding-right: 3px;
+}
+
+.required-large {
+  font-size: 18px;
+  color: red;
+  position: relative;
+  bottom: 45px;
+  padding-right: 3px;
+}
+
+.required-msg {
+  color: red;
+  position: relative;
+}
+
+    /* RECIPE INPUTS */
+.new-recipe-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+
+.new-recipe-input {
+  margin-bottom: 5px;
+}
+.new-recipe-input:focus {
+  border: 1px solid rgb(115, 231, 125);
+}
+
+.input-not-required {
+  position: relative;
+  left: 10px;
+}
+
+    /* SMALL INPUTS */
+.flex-small-inputs {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.new-recipe-title {
+  width: 256.5px;
+}
+
+.new-recipe-price {
+  position: relative;
+  /* margin-left: 3px; */
+  left: 10px;
+  width: 256.5px;
+}
+
+    /* LARGE INPUTS */
+.input-large {
+  height: 100px;
+  width: 540px;
+  border: 1px solid rgba(128, 128, 128, 0.616);
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+.input-large::placeholder {
+  position: relative;
+}
+
+    /* CREATE BUTTON */
+.create-button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.recipe-create {
+  border: 1px solid transparent;
+  padding: 10px;
+  margin-top: 30px;
+  border-radius: 5px;
+  width: 200px;
+  text-align: center;
+  background-color: rgb(115, 231, 125);
+  color: white;
+}

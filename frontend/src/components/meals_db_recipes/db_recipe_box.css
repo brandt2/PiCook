@@ -43,7 +43,23 @@
 .recipe-title-div {
   display: flex;
   justify-content: center;
-  
+  align-items: center;
+}
+
+.save-recipe-button {
+  margin-left: 50px;
+  padding: 10px 20px;
+  background: rgb(115, 231, 125);
+  color: white;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.save-recipe-button:hover {
+  transition: 0.4s;
+  color: black;
+  background: rgb(115, 231, 125, 0.8);
 }
 
 .recipe-title {

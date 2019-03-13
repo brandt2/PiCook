@@ -3,6 +3,7 @@ import DBIngredients from './db_ingredients';
 import { Link } from 'react-router-dom';
 import "./db_recipe_box.css"
 
+
 class DBRecipeBox extends React.Component {
   constructor(props) {
     super(props);
@@ -44,6 +45,12 @@ class DBRecipeBox extends React.Component {
           <div className="recipe-info">
             <div className="recipe-title-div">
               <h3 className="recipe-title">{recipe.strMeal}</h3>
+              <div>   
+                <Link className="save-recipe-button" to={{
+                  pathname: "/recipes/new",
+                  recipe: recipe
+                }}>Save this recipe</Link>
+              </div>
             </div>
             <div className="recipe-instruction-div">
               <div className="instructions-div">
@@ -74,12 +81,6 @@ class DBRecipeBox extends React.Component {
         </div>
 
         {/* if logged in, render button, else render login message */}
-        <Link to={{
-          pathname: "/recipes/new",
-          recipe: recipe
-        }}>
-          <button>Save this recipe</button>
-        </Link>
       </div>
     )
   }

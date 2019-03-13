@@ -1,4 +1,106 @@
-.index-recipes {
+    /* ALL */
+.index-all-recipes {
+  overflow: scroll;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+    /* BACKGROUND */
+.index-recipe-background {
+  height: 100vh;
+  width: 100%;
   background-size: cover;
   background-image: url("background2.jpg");
+  position: fixed;
+}
+
+.all-recipes-msg {
+  position: relative;
+  font-size: 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  align-self: center;
+  margin-top: 70px;
+  margin-bottom: 30px;
+}
+
+    /* CREATE RECIPE BUTTON */
+.create-recipe {
+  align-self: center;
+  position: relative; 
+  margin-bottom: 30px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.123);
+  color: black;
+  border: 1.5px solid rgba(0, 0, 0, 0.377);
+  /* border-radius: 10px; */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;  
+}
+
+.create-recipe:hover {
+  background-color: rgba(0, 0, 0, 0.349);
+  color: white;
+}
+
+.create-recipe-msg {
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+    /* RECIPE GRID */
+.all-recipes {
+  position: relative;
+  display: grid;
+  grid-template-columns: 250px 250px 250px ;
+  /* grid-column-gap: 10px; */
+  /* grid-row-gap: 10px; */
+  /* padding: 20px; */
+  width: 750px;
+  align-self: center;
+  height: 460px;
+  overflow: scroll;
+  /* border-radius: 10px; */
+  border: 1px solid rgba(0, 0, 0, 0.377);
+}
+
+.single-recipe {
+  border: 1px solid rgba(0, 0, 0, 0.377);
+  /* border-radius: 10px; */
+  /* position: relative; */
+  /* top: -10px; */
+  padding: 10px;
+  height: 100px;
+  text-align: center;
+  line-height: middle;
+  background-color: rgba(0, 0, 0, 0.123);
+}
+
+.single-recipe:hover {
+  background-color: rgba(0, 0, 0, 0.349);
+  cursor: pointer;
+  color: white;
+}
+
+    /* EACH RECIPE INPUTS */
+.index-recipe-title {
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  margin-bottom: 20px;
+  overflow: hidden;
+  padding-top: 15px;
+}
+
+.avg-price {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  /* padding-top:8px; */
+}
+
+.index-recipe-price {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  padding-top: 8px;
 }

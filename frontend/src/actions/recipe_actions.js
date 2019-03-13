@@ -5,7 +5,9 @@ export const RECEIVE_RECIPES = "RECEIVE_RECIPES";
 export const RECEIVE_RECIPE = "RECEIVE_RECIPE";
 export const RECEIVE_CATEGORIES = "RECEIVE_CATEGORIES";
 export const REMOVE_RECIPE = "REMOVE_RECIPE";
-
+export const START_LOADING_ALL_RECIPES = "START_LOADING_ALL_RECIPES";
+export const START_LOADING_RECIPE = "START_LOADING_RECIPE";
+// export const RECEIVE_RECIPE_ERRORS = "RECEIVE_RECIPE_ERRORS";
 
 export const receiveRecipes = payload => ({
   type: RECEIVE_RECIPES,
@@ -21,6 +23,18 @@ export const receiveCategories = payload => ({
   type: RECEIVE_CATEGORIES,
   payload
 })
+export const startLoadingAllRecipes = () => ({
+  type: START_LOADING_ALL_RECIPES
+});
+
+export const startLoadingRecipe = () => ({
+  type: START_LOADING_RECIPE
+});
+
+// export const receiveRecipeErrors = errors => ({
+//   type: RECEIVE_RECIPE_ERRORS,
+//   errors
+// })
 
 // export const receivePuppyRecipes = puppyRecipes => ({
 //   type: RECEIVE_PUPPY_RECIPES,
@@ -31,7 +45,7 @@ export const getRecipesByDishName = food => dispatch => {
   return RecipeAPIs.fetchRecipesByDishName(food)
     .then(res => {
       return dispatch(receiveRecipes(res.data))
-    })
+    }).catch( err => console.log(err))
 }
 
 export const getRecipeById = id => dispatch => (
