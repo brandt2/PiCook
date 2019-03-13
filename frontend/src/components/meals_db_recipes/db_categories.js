@@ -14,6 +14,7 @@ class DBCategories extends React.Component{
     if (recipes === undefined) return null;
     
     const categories = recipes.map(cat => {
+      if (cat.strCategory === "Pork") cat.strCategoryThumb = "https://www.themealdb.com/images/category/pork.png"
       return (
       <div className="recipe-index-div">
         <h1 className="recipe-index-title">{cat.strCategory}</h1>
@@ -26,8 +27,15 @@ class DBCategories extends React.Component{
     })
     
     return(
-      <div>
-        {categories}
+      <div className="index-background">
+        <div className="yes-index-recipes">
+          <div className="title-index">
+            <h2 className="found-title">Found Categories</h2>
+          </div>
+          <div className="index-recipes">
+            {categories}
+          </div>
+        </div>
       </div>
     )
   }
