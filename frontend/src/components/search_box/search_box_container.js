@@ -6,7 +6,9 @@ import {getResultFromVision} from '../../actions/search_box_action';
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        vision: state.vision
+        visionResponses: state.searchBox.visionResponses.map(el => {
+            return el.description;
+        })
     };
 };
 

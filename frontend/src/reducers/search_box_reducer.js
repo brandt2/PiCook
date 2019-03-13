@@ -4,16 +4,17 @@ import {
 
 let _nullState = {
     imageUrl: null,
-    visonResponses: []
+    visionResponses: []
 };
 
 const SearchBoxReducer = (oldState = _nullState, action) => {
     Object.freeze(oldState);
+    debugger
 
     let nextState = Object.assign({}, oldState);
     switch (action.type) {
         case RECEIVE_LABELS:
-            nextState.visonResponses = action.payload.responses;
+            nextState.visionResponses = action.payload.data;
             return nextState;
         default:
             return oldState;
