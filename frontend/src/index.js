@@ -41,9 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.axios = axios;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.getRecipeById = getRecipeById;
   window.getRecipesByCategory = getRecipesByCategory;
-  window.uploadImageToS3 = uploadImageToS3;
   // window.request = request;
   // Test end
 

@@ -39,7 +39,7 @@ class SearchBox extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.closeModal();
-    this.props.history.push(`/dbmeals/${this.state.textContent}/recipes`);
+    this.props.history.push(`/dbmeals/${this.state.textContent}`);
   }
 
   openModal() {

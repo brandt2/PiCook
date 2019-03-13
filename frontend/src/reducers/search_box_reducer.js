@@ -9,7 +9,6 @@ let _nullState = {
 
 const SearchBoxReducer = (oldState = _nullState, action) => {
     Object.freeze(oldState);
-    debugger
 
     let nextState = Object.assign({}, oldState);
     switch (action.type) {

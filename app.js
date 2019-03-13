@@ -5,7 +5,7 @@ const db = require('./config/keys_dev').mongoURI;
 const bodyParser = require('body-parser');
 const passport = require("passport");
 const images = require("./routes/api/upload");
-const labels = require("./routes/api/vision");
+// const labels = require("./routes/api/vision");
 const path = require('path');
 
 if (process.env.NODE_ENV === 'production') {
