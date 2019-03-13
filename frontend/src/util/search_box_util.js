@@ -1,9 +1,15 @@
 import axios from 'axios';
 // import {visionApiKey} from '../../../config/keys';
 
-
-export const uploadImageToS3 = file => {
-    return axios.post('/api/image-upload',file);
+export const getResultFromVision = file => {
+  const bodyFormData = new FormData();
+  bodyFormData.append("image", file);
+  return axios({
+    method: "post",
+    url: "/api/image-upload",
+    data: bodyFormData,
+    config: { headers: { "Content-Type": "multipart/form-data" } }
+  });
 };
 
 // export const getLabelByImageUrl = request => {

@@ -9,8 +9,8 @@ export const receiveLabels = payload => ({
 
 export const getResultFromVision = file => dispatch => {
   return SearchBoxAPIS.getResultFromVision(file).then(res => {
-    debugger
-      console.log("getLabels by vision: " + res);
       return dispatch(receiveLabels(res));
   });
 };
+
+
