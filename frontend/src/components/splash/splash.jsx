@@ -1,15 +1,45 @@
 import React from 'react';
 import './splash.css';
+import { withRouter } from 'react-router-dom';
 
-export default () => (
-  <div className="splash">
-      <div className='slide1'></div>
-      <div className='slide2'></div>
-      <div className='slide3'></div>
-    <div>
-      <h1>Find your Recipe</h1>
-      <br/>
-      <h3>Join the PiCook community</h3>
-    </div>
-  </div>
-)
+class Splash extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      search: ''
+    }
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.history.push(`/dbmeals/${e.target.value}`)
+  }
+
+  handleUpdate(e){
+    this.setState({search: e.target.value});
+  }
+
+  render () {
+    return (
+      <div className="splash">
+        <div className='slide1'></div>
+        <div className='slide2'></div>
+        <div className='slide3'></div>
+        <div className="testing-things-out">
+          <form onSubmit={this.handleSubmit}>
+            <input type="text" onChange={this.handleUpdate}/>
+          </form>
+          <h1>Find your Recipe</h1>
+          <br />
+          <h3>Join the PiCook community</h3>
+        </div>
+      </div>
+    )
+  }
+}
+
+export default withRouter(Splash);

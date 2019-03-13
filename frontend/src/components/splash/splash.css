@@ -50,7 +50,7 @@ ul {
   background-size: cover;
   animation: fade 21s infinite;
   -webkit-animation: fade 21s infinite;
-  z-index: -1;
+  z-index: -2;
 }
 
 .slide2 {
@@ -58,7 +58,7 @@ ul {
   background-size: cover;
   animation: fade2 21s infinite;
   -webkit-animation: fade2 21s infinite;
-  z-index: -1;
+  z-index: -2;
 }
 
 .slide3 {
@@ -66,7 +66,7 @@ ul {
   background-size: cover;
   animation: fade3 21s infinite;
   -webkit-animation: fade3 21s infinite;
-  z-index: -1;
+  z-index: -2;
 }
 
 @keyframes fade {
@@ -86,4 +86,9 @@ ul {
   33.333% { opacity: 0}
   66.666% { opacity: 1}
   100% { opacity: 0}
+}
+
+.testing-things-out {
+  z-index: 1;
+  background: aqua;
 }
