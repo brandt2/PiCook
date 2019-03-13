@@ -14,6 +14,7 @@ import RecipeContainer from './recipes/recipe_container';
 import CreateRecipeContainer from './recipes/create_recipe_container';
 import ShowRecipeContainer from './recipes/show_recipe_container';
 import UpdateRecipeContainer from './recipes/update_recipe_container';
+import SearchBoxContainer from './search_box/search_box_container';
 
 const App = () => (
   <div>
@@ -25,6 +26,7 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <Route path="/dbmeals/:idMeal" component={DBRecipeBoxContainer} />
       <Route path="/dbmeals" component={DBRecipesByNameContainer} />
+      <Route path="/visions" component={SearchBoxContainer} />
       
       <ProtectedRoute path="/recipes/new" component={CreateRecipeContainer} />
       <ProtectedRoute path="/recipes/update/:id" component={UpdateRecipeContainer} />

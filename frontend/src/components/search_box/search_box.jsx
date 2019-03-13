@@ -1,26 +1,47 @@
 import React from "react";
-import axios from "axios";
 import { withRouter } from "react-router-dom";
-import Vision from "@google-cloud/vision";
-import ReactDropzone from "react-dropzone";
+import Dropzone from "react-dropzone";
+import request  from 'request';
+import "./search_box.css";
 
 class SearchBox extends React.Component {
   constructor(props) {
     super(props);
-    this.onDropImg = this.onDropImg.bind(this);
     this.handleDrop = this.handleDrop.bind(this);
+    this.state = {
+      isShowList : false
+    }
   }
 
-  handleDrop(file) {
-      this.props.getImageURLByAWS(file).then(res => console.log(res));
+
+  handleDrop(files) {
+      if (files && files.length !== 0) {
+        debugger
+      this.props.getResultFromVision(files[0]);
+      }
+  }
+
+  handleList() {
+
   }
 
   render() {
-    let imgPlaceholder = "Drag and drop your image.";
+
     return (
       <div className="search-img-box">
-            <ReactDropzone onDrop={this.handleDrop}>{imgPlaceholder}</ReactDropzone>
+        <Dropzone onDrop={acceptedFiles => this.handleDrop(acceptedFiles)}>
+          {({ getRootProps, getInputProps }) => (
+            <section>
+              <div {...getRootProps()}>
+                <input {...getInputProps()} />
+                <p>Drag 'n' drop some files here, or click to select files</p>
+              </div>
+            </section>
+          )}
+        </Dropzone>
       </div>
     );
   }
 }
+
+export default SearchBox;

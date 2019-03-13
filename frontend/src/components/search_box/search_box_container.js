@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-
 import SearchBox from './search_box';
-import { getImageURLByAWS, getLabelsByVision } from '../../actions/seach_box_action';
+import {getResultFromVision} from '../../actions/search_box_action';
+
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -12,8 +12,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        getImageURLByAWS: (file) => dispatch(getImageURLByAWS(file)),
-        getLabelsByVision: (request) => dispatch(getLabelsByVision(request))
+        getResultFromVision: (file) => dispatch(getResultFromVision(file)),
     };
 };
 
