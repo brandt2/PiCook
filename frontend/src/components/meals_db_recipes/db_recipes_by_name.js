@@ -6,16 +6,16 @@ import './db_recipes_by_name.css'
 class DBRecipesByName extends React.Component {
   constructor(props) {
     super(props);
-    // debugger
+    
     this.state= {
       recipes: []
     }
 
-    this.keyword = "pork"
+    // this.keyword = "pork"
   }
   componentDidMount() {
-    this.props.getRecipesByDishName(this.keyword)
-    // this.setState(this.props.getRecipesByDishName(this.keyword))
+    debugger
+    this.props.getRecipesByDishName(this.props.match.params.food)
   }
   render() {
     // get search keyword from props from alec

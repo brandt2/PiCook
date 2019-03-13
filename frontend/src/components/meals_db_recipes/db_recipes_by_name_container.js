@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  getRecipesByDishName: keyword => dispatch(getRecipesByDishName(keyword)),
+  getRecipesByDishName: food => dispatch(getRecipesByDishName(food)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(DBRecipesByName);

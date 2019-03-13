@@ -3,6 +3,7 @@ import * as RecipeAPIs from '../util/recipe_api_util';
 
 export const RECEIVE_RECIPES = "RECEIVE_RECIPES";
 export const RECEIVE_RECIPE = "RECEIVE_RECIPE";
+export const RECEIVE_CATEGORIES = "RECEIVE_CATEGORIES";
 export const REMOVE_RECIPE = "REMOVE_RECIPE";
 
 
@@ -14,6 +15,11 @@ export const receiveRecipes = payload => ({
 export const receiveRecipe = payload => ({
   type: RECEIVE_RECIPE,
   payload: payload.meals[0]
+})
+
+export const receiveCategories = payload => ({
+  type: RECEIVE_CATEGORIES,
+  payload
 })
 
 // export const receivePuppyRecipes = puppyRecipes => ({
@@ -31,23 +37,26 @@ export const getRecipesByDishName = food => dispatch => {
 export const getRecipeById = id => dispatch => (
   RecipeAPIs.fetchRecipeById(id)
     .then(res => {
-      // debugger
       dispatch(receiveRecipe(res.data))
     }
-    )
+  )
 )
 
 export const getRecipesByIngredient = food => dispatch => (
   RecipeAPIs.fetchRecipesByIngredient(food)
-    .then(res => (dispatch(receiveRecipes(res)))
+    .then(res => (dispatch(receiveRecipes(res.data)))
   )
 )
 
-export const getRecipesByCat = food => dispatch => (
-  RecipeAPIs.fetchRecipesByCat(food)
-    .then(res => (dispatch(receiveRecipes(res)))
+export const getAllCategories = () => dispatch => (
+  RecipeAPIs.fetchAllCategories()
+    .then(res => (dispatch(receiveCategories(res.data)))
   )
 )
 
-
+export const getRecipesByCategory = category => dispatch => (
+  RecipeAPIs.fetchRecipesByCategory(category)
+    .then(res => (dispatch(receiveRecipes(res.data)))
+    )
+)
 
