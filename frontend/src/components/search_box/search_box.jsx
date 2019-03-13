@@ -28,7 +28,8 @@ class SearchBox extends React.Component {
     this.state = {
       isShowList: false,
       modalIsOpen: false,
-      textContent: ""
+      textContent: "",
+      loading: true
     };
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
@@ -80,7 +81,7 @@ class SearchBox extends React.Component {
           onSubmit={this.handleSubmit}
         >
           <Form.Field>
-            Selected: <b>{this.state.textContent}</b>
+            Please Select: <b>{this.state.textContent}</b>
           </Form.Field>
           {this.props.visionResponses.map(key => {
             return (
@@ -97,7 +98,7 @@ class SearchBox extends React.Component {
             );
           })}
           <label>
-            <input type="submit" value="submit" />
+            <input className="submit-button" type="submit" value="submit" />
           </label>
         </Form>
       </div>
@@ -105,7 +106,7 @@ class SearchBox extends React.Component {
   }
 
   infoList() {
-    if (this.props.visionResponses)
+    if (this.props.visionResponses){
       if (
         this.props.visionResponses &&
         this.props.visionResponses.length !== 0
@@ -120,22 +121,23 @@ class SearchBox extends React.Component {
           <div className="search-box-meal-not-found">
             <p>
               Sorry, we don't have the information of your meal, please either
-              retry or tell me the name.
+              retry or use the search bar.
             </p>
           </div>
         );
       }
+    }
   }
 
   render() {
     return (
-      <div className="search-img-box">
+      <div >
         <Dropzone onDrop={acceptedFiles => this.handleDrop(acceptedFiles)}>
           {({ getRootProps, getInputProps }) => (
             <section>
               <div {...getRootProps()}>
                 <input {...getInputProps()} />
-                <p>Drag 'n' drop some files here, or click to select files</p>
+                <p className="search-img-box">Drag and drop a file here, or click to select file</p>
               </div>
             </section>
           )}
@@ -147,9 +149,9 @@ class SearchBox extends React.Component {
           style={customStyles}
           contentLabel="About your images."
         >
-          <h2 className="modal-seach-box-header">About the Image</h2>
+          {/* <h2 className="modal-seach-box-header">Pick best choice</h2> */}
           <div>{this.infoList()}</div>
-          <button onClick={this.closeModal}>close</button>
+          <button className="submit-button" onClick={this.closeModal}>close</button>
         </Modal>
       </div>
     );

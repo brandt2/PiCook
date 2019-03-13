@@ -1,18 +1,36 @@
 import React from 'react';
 import DBIngredients from './db_ingredients';
 import { Link } from 'react-router-dom';
-import "./db_recipe_box.css"
+import LoadingIcon from './loading_icon.js';
+import "./db_recipe_box.css";
 
 class DBRecipeBox extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      loading: true
+    }
   }
 
   componentDidMount() {
     this.props.getRecipeById(this.props.match.params.idMeal)
   }
 
+  componentDidUpdate({ loading }) {
+    if (this.props.loading !== this.state.loading) {
+      this.setState({ loading: this.props.loading })
+    }
+  }
+
   render() {
+
+    if (this.state.loading === true) {
+      return (
+        <LoadingIcon />
+      )
+    }
+
     const recipe = this.props.recipe;
     if (recipe === undefined || recipe.strInstructions === undefined) return null;
     const instructions = (

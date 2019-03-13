@@ -1,16 +1,34 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LoadingIcon from './loading_icon.js';
 
 class DBRecipesByCategory extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
+
+    this.state = {
+      loading: true
+    }
   }
 
   componentDidMount() {
     this.props.getRecipesByCategory(this.props.category)
   }
+
+  componentDidUpdate({ loading }) {
+    if (this.props.loading !== this.state.loading) {
+      this.setState({ loading: this.props.loading })
+    }
+  }
   
   render() {
+
+    if (this.state.loading === true) {
+      return (
+        <LoadingIcon />
+      )
+    }
+
     const recipes = this.props.recipes.map((recipe, index) => {
       return (
         <div className="recipe-index-div" key={index}>

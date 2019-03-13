@@ -31,7 +31,6 @@ class Splash extends React.Component {
         <div className='slide2'></div>
         <div className='slide3'></div>
         <div className="wrap">
-          <SearchBoxContainer className="search-image-box"/>
           <form className="search" onSubmit={this.handleSubmit}>
             <input
               className="search-term" 
@@ -40,6 +39,9 @@ class Splash extends React.Component {
               placeholder="What food do you want to make?"/>
             <button className="search-button" type="submit"><i class="fas fa-search"></i></button>
           </form>
+          <div className="search-image-box-div">
+            <SearchBoxContainer className="search-image-box"/>
+          </div>
         </div>
       </div>
     )
