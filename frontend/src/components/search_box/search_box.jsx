@@ -33,7 +33,6 @@ class SearchBox extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.textContentTab = this.textContentTab.bind(this);
   }
 
   handleSubmit(e) {
@@ -71,25 +70,6 @@ class SearchBox extends React.Component {
         this.openModal();
       });
     }
-  }
-
-  textContentTab() {
-    return (
-      <div className="textContentTab">
-        <form className="search-box-modal-text" onSubmit={this.handleSubmit}>
-          <label>
-            <input
-              type="text"
-              onChange={this.update("textContent")}
-              value={this.state.textContent}
-            />
-          </label>
-          <label>
-            <input type="submit" value="submit" />
-          </label>
-        </form>
-      </div>
-    );
   }
 
   responsesList() {
@@ -143,7 +123,6 @@ class SearchBox extends React.Component {
               Sorry, we don't have the information of your meal, please either
               retry or tell me the name.
             </p>
-            {this.textContentTab()}
           </div>
         );
       }
