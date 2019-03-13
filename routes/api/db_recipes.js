@@ -38,9 +38,9 @@ router.get("/categories", (req, res) => {
 
 router.get("/categories/:category", (req, res) => {
   const category = req.params.category;
-  return getRecipesByCategory(category).then(response => (
-    res.json(response)
-  ))
+  return getRecipesByCategory(category).then(response => {
+    return res.json(response)
+  })
 })
 
 router.get("/food/:id",

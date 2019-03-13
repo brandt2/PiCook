@@ -70,7 +70,8 @@ export const getAllCategories = () => dispatch => (
 
 export const getRecipesByCategory = category => dispatch => (
   RecipeAPIs.fetchRecipesByCategory(category)
-    .then(res => (dispatch(receiveRecipes(res.data)))
+    .then(res => {
+      dispatch(receiveRecipes(res.data))}
     )
 )
 

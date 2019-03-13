@@ -44,7 +44,7 @@ class DBRecipesByName extends React.Component {
         (
           <div className="recipe-index-div">
             <h1 className="recipe-index-title">{recipe.strMeal}</h1>
-            <Link to={`/dbmeals/${recipe.idMeal}`} key={recipe.idMeal}>
+            <Link to={`/dbmeals/food/${recipe.idMeal}`} key={recipe.idMeal}>
               <img className="each-recipe" src={recipe.strMealThumb}/>
             </Link>
           </div>
