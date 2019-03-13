@@ -17,7 +17,7 @@ export const fetchRecipesByIngredient = ingredient => {
 }
 
 export const fetchRecipesByCategory = category => {
-  return axios.get(`/categories/${category}`)
+  return axios.get(`api/db_recipes/categories/${category}`)
 }
 
 export const fetchAllCategories = () => {

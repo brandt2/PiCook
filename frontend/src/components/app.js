@@ -27,8 +27,8 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <Route path="/dbmeals/food/:idMeal" component={DBRecipeBoxContainer} />
       <Route path="/dbmeals/:food" component={DBRecipesByNameContainer} />
-      <Route path="/categories" component={DBCategoriesContainer} />
       <Route path="/categories/:cat" component={DBRecipesByCategoriesContainer} />
+      <Route path="/categories" component={DBCategoriesContainer} />
       
       <ProtectedRoute path="/recipes/new" component={CreateRecipeContainer} />
       <ProtectedRoute path="/recipes/update/:id" component={UpdateRecipeContainer} />

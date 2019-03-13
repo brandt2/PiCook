@@ -7,24 +7,26 @@ class DBRecipesByCategory extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getRecipesByCategory(this.props.match.params.cat)
+    this.props.getRecipesByCategory(this.props.category)
   }
   
   render() {
-
-    const recipes = this.props.recipes.map((recipe, index) =>
-      (
-        <div className="recipe-index-div">
+    const recipes = this.props.recipes.map((recipe, index) => {
+      return (
+        <div className="recipe-index-div" key={index}>
           <h1 className="recipe-index-title">{recipe.strMeal}</h1>
-          <Link to={`/dbmeals/${recipe.idMeal}`} key={recipe.idMeal}>
+          <Link to={`/dbmeals/food/${recipe.idMeal}`}>
             <img className="each-recipe" src={recipe.strMealThumb} />
           </Link>
         </div>
       )
+
+    }
     )
 
     return(
       <div>
+        ajdiofjdiosfjoidsjfoisdjfdsiofjdsfjsdojfsidojoidsfjoisd
         {recipes}
       </div>
     )
