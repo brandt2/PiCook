@@ -97,7 +97,7 @@ class UpdateRecipe extends React.Component {
               />
             </label>
           </div>
-          <input className="recipe-create" type="submit" value="UPDATE" />
+          <input className="recipe-update" type="submit" value="UPDATE" />
         </form>
       </div>
     )
