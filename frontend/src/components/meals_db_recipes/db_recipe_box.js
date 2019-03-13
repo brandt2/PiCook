@@ -15,7 +15,7 @@ class DBRecipeBox extends React.Component {
 
   render() {
     const recipe = this.props.recipe;
-    if (recipe === undefined) return null;
+    if (recipe === undefined || recipe.strInstructions === undefined) return null;
     const instructions = (
       JSON.stringify(recipe.strInstructions)
         // .split('\\r\\n').map((paragraph, i) => (
