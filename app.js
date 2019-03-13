@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 const express = require("express");
 const app = express();
-const db = require('./config/keys').mongoURI;
+const db = require('./config/keys_dev').mongoURI;
 const bodyParser = require('body-parser');
 const passport = require("passport");
 const images = require("./routes/api/upload");
-const labels = require("./routes/api/vision");
+// const labels = require("./routes/api/vision");
 const path = require('path');
 
 if (process.env.NODE_ENV === 'production') {
@@ -43,6 +43,6 @@ app.use("/api/db_recipes", dbRecipes);
 
 
 app.use("/api/image-upload", images);
-app.use("api/search-vision", labels);
+
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));

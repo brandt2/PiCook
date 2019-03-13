@@ -1,6 +1,7 @@
 import React from 'react';
 import './splash.css';
 import { withRouter } from 'react-router-dom';
+import SearchBoxContainer from '../search_box/search_box_container';
 
 class Splash extends React.Component {
   constructor(props){
@@ -30,6 +31,7 @@ class Splash extends React.Component {
         <div className='slide2'></div>
         <div className='slide3'></div>
         <div className="wrap">
+          <SearchBoxContainer className="search-image-box"/>
           <form className="search" onSubmit={this.handleSubmit}>
             <input
               className="search-term" 
