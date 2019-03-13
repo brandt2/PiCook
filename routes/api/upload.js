@@ -12,7 +12,7 @@ const {
   awsSecretAccessKey,
   region,
   visionApiKey
-} = require("../../config/keys_dev");
+} = require("../../config/keys");
 
 aws.config.update({
   secretAccessKey: awsSecretAccessKey,
