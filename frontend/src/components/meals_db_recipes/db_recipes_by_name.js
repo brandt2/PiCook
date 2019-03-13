@@ -1,5 +1,4 @@
 import React from 'react';
-import DBRecipeBox from './db_recipe_box';
 import { withRouter, Link } from 'react-router-dom';
 import LoadingIcon from './loading_icon.js';
 import './db_recipes_by_name.css';
@@ -45,7 +44,7 @@ class DBRecipesByName extends React.Component {
           <div className="recipe-index-div">
             <h1 className="recipe-index-title">{recipe.strMeal}</h1>
             <Link to={`/dbmeals/food/${recipe.idMeal}`} key={recipe.idMeal}>
-              <img className="each-recipe" src={recipe.strMealThumb}/>
+              <img className="each-recipe" src={recipe.strMealThumb} alt={recipe.strMeal} />
             </Link>
           </div>
         )

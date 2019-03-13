@@ -12,14 +12,6 @@ const recipesSelector = (arr) => {
   return result;
 }
 
-const categoriesSelector = (arr) => {
-  let result = {};
-  for (let i = 0; i < arr.length; i++) {
-    result[arr[i].idCategory] = arr[i]
-  }
-  return result;
-}
-
 const RecipesReducer = (state = {}, action) => {
   Object.freeze(state);
 

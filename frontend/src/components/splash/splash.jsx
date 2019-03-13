@@ -37,7 +37,7 @@ class Splash extends React.Component {
               type="text" 
               onChange={this.handleUpdate}
               placeholder="What food do you want to make?"/>
-            <button className="search-button" type="submit"><i class="fas fa-search"></i></button>
+            <button className="search-button" type="submit"><i className="fas fa-search"></i></button>
           </form>
           <div className="search-image-box-div">
             <SearchBoxContainer className="search-image-box"/>

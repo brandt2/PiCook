@@ -1,7 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import Dropzone from "react-dropzone";
-import ReactDOM from "react-dom";
 import "./search_box.css";
 import Modal from "react-modal";
 import { Form, Checkbox } from "semantic-ui-react";
