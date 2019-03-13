@@ -108,6 +108,7 @@ ul {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   color: #9DBFAF;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .search-term:focus{

@@ -25,9 +25,15 @@ class DBRecipesByCategory extends React.Component {
     )
 
     return(
-      <div>
-        ajdiofjdiosfjoidsjfoisdjfdsiofjdsfjsdojfsidojoidsfjoisd
-        {recipes}
+      <div className="index-background">
+        <div className="yes-index-recipes">
+          <div className="title-index">
+            <h2 className="found-title">Found Recipes</h2>
+          </div>
+          <div className="index-recipes">
+            {recipes}
+          </div>
+        </div>
       </div>
     )
   }
