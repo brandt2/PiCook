@@ -16,7 +16,6 @@ class SearchBox extends React.Component {
 
   handleDrop(files) {
       if (files && files.length !== 0) {
-        debugger
       this.props.getResultFromVision(files[0]);
       }
   }

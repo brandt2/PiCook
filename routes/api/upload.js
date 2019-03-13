@@ -40,7 +40,6 @@ router.post('/', function(req, res) {
     saveS3(req, res).then(img => {
         return getLabelByUrl(img.imageUrl);
     }).then(result => {
-        debugger
         const labels = result[0].labelAnnotations;
         return res.json(labels);
     }).catch(err => console.log(err));
@@ -64,7 +63,6 @@ function saveS3(req, res) {
 
 
 function getLabelByUrl(request) {
-    debugger
     return client.labelDetection(request);
 }
 
