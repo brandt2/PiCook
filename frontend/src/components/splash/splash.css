@@ -90,6 +90,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .search {
@@ -127,4 +128,8 @@ ul {
   border-bottom-right-radius: 5px;
   cursor: pointer;
   font-size: 20px;
+}
+
+.search-image-box-div {
+  /* margin-bottom: 50px; */
 }
