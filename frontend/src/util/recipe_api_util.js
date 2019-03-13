@@ -1,25 +1,25 @@
 import axios from 'axios';
 
 export const fetchRecipesByDishName = food => (
-  // return axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${food}`)
   axios({
     method: 'get',
-    url: `https://www.themealdb.com/api/json/v1/1/search.php?s=${food}`,
+    url: `api/db_recipes/${food}/recipes`,
   })
-  // .then(res => res.data.meals)
 )
+
+export const fetchRecipeById = id => {
+  return axios.get(`api/db_recipes/food/${id}`)
+}
 
 export const fetchRecipesByIngredient = ingredient => {
   return axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`)
     // .then(res => res.data.meals)
 }
 
-export const fetchRecipeById = id => {
-  return axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
-    // .then(res => res.data.meals[0])
+export const fetchRecipesByCategory = category => {
+  return axios.get(`api/db_recipes/categories/${category}`)
 }
 
-export const fetchRecipesByCat = cat => {
-  return axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${cat}`)
-    // .then(res => res.data.meals)
+export const fetchAllCategories = () => {
+  return axios.get(`api/db_recipes/categories`)
 };

@@ -1,24 +1,38 @@
 import React from 'react';
 import DBRecipeBox from './db_recipe_box';
 import { withRouter, Link } from 'react-router-dom';
-import './db_recipes_by_name.css'
+import LoadingIcon from './loading_icon.js';
+import './db_recipes_by_name.css';
 
 class DBRecipesByName extends React.Component {
   constructor(props) {
     super(props);
-
+    
     this.state= {
-      recipes: []
+      recipes: [],
+      loading: true
     }
 
-    this.keyword = "Chicken"
+    // this.keyword = "pork"
   }
   componentDidMount() {
-    this.props.getRecipesByDishName(this.keyword)
-    // this.setState(this.props.getRecipesByDishName(this.keyword))
+    this.props.getRecipesByDishName(this.props.match.params.food)
   }
+
+  componentDidUpdate({ loading }){
+    if (this.props.loading !== this.state.loading) {
+      this.setState( {loading: this.props.loading} )
+    }
+  }
+
   render() {
     // get search keyword from props from alec
+    if (this.state.loading === true) {
+      return (
+        <LoadingIcon />
+      )
+    }
+
     if (this.props.recipes.length === 0) {
       return (
         <div className="title-index">
@@ -30,9 +44,8 @@ class DBRecipesByName extends React.Component {
         (
           <div className="recipe-index-div">
             <h1 className="recipe-index-title">{recipe.strMeal}</h1>
-            <Link to={`/dbmeals/${recipe.idMeal}`} key={recipe.idMeal}>
+            <Link to={`/dbmeals/food/${recipe.idMeal}`} key={recipe.idMeal}>
               <img className="each-recipe" src={recipe.strMealThumb}/>
-              {/* {recipe.strMeal} */}
             </Link>
           </div>
         )

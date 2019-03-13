@@ -10,7 +10,7 @@ import { logout } from './actions/session_actions';
 import './index.css';
 import axios from 'axios';
 
-import { getRecipeById} from './actions/recipe_actions';
+import { getRecipesByCategory } from './actions/recipe_actions';
 import { request } from './util/recipe_api_util';
 
 // ReactDOM.render(<App />, document.getElementById('root'));
@@ -42,6 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   window.getRecipeById = getRecipeById;
+  window.getRecipesByCategory = getRecipesByCategory;
+  window.uploadImageToS3 = uploadImageToS3;
   // window.request = request;
   // Test end
 
