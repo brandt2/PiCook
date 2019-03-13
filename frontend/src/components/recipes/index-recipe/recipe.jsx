@@ -1,12 +1,12 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { button, Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './index-recipe.css';
 
 class Recipe extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
   componentDidMount() {
     this.props.fetchAllRecipes();
   }
