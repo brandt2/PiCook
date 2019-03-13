@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { button, Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './show-recipe.css';
 
 class ShowRecipe extends React.Component {

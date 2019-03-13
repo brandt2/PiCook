@@ -11,7 +11,6 @@ import './index.css';
 import axios from 'axios';
 
 import { getRecipesByCategory } from './actions/recipe_actions';
-import { request } from './util/recipe_api_util';
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 

@@ -1,68 +1,42 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# PiCook
+![PiCook Logo](favicon.png)
+[Live Site!](https://picook.herokuapp.com/#/)
 
-## Available Scripts
+PiCook is an app where you can find recipes by uploading a picture or searching a title of the meal or an ingredient.
+If you haven't made an account with us, you can still search for recipes, but you are not allowed to create/edit/delete your own recipes.
 
-In the project directory, you can run:
+### Features:
+* User Auth:
+ * Create a new User
+ * Login to existing account
+ * Logout current User
 
-### `npm start`
+* User Recipe:
+ * Save a recipe
+   * Title and instructions are pre-filled when the user is trying to save the fetched recipe 
+ * Edit a recipe
+   * Previous information is pre-filled 
+ * Delete a recipe
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* Search by Text:
+ * Redirect to Index page after searching for a food
+ * Render a list of recipes through The Meals DB API
+ 
+ * Each image of a recipe is a link to the details of that recipe
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
-### `npm test`
+* Search by Image:
+ * 
+ * Redirect to Index page after uploading an image of food
+ * Render a list of options that the image can be using Image
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
 
-### `npm run build`
+### Future Goals:
+* User Recipe:
+ * User saves their own recipes / private
+ * Favorite a recipe
+ * Rate a recipe
+ * Upload a picture when saving their own recipe
+ * User can organize different recipes by categories.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

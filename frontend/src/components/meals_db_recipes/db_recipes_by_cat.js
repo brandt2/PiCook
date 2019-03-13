@@ -34,7 +34,7 @@ class DBRecipesByCategory extends React.Component {
         <div className="recipe-index-div" key={index}>
           <h1 className="recipe-index-title">{recipe.strMeal}</h1>
           <Link to={`/dbmeals/food/${recipe.idMeal}`}>
-            <img className="each-recipe" src={recipe.strMealThumb} />
+            <img className="each-recipe" src={recipe.strMealThumb} alt={recipe.strMeal}/>
           </Link>
         </div>
       )

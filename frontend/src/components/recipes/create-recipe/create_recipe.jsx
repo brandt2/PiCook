@@ -1,7 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import './create-recipe.css';
-import DBIngredients from '../../meals_db_recipes/db_ingredients';
 
 class CreateRecipe extends React.Component {
   constructor(props) {

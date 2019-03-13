@@ -36,7 +36,9 @@ class DBRecipeBox extends React.Component {
     const instructions = (
       JSON.stringify(recipe.strInstructions)
         .split('\\r\\n').map((paragraph, i) => {
-          if (paragraph !== "") return <li key={i}>{paragraph}</li>
+          if (paragraph !== "") {
+            return <li key={i}>{paragraph}</li>
+          } else return null;
         }
       )
     )
@@ -54,7 +56,7 @@ class DBRecipeBox extends React.Component {
         <div className="some-div">
           <div className="recipe-image-div">
             <div className="recipe-image">
-              <img src={recipe.strMealThumb}></img>
+              <img src={recipe.strMealThumb} alt={recipe.strMeal}></img>
             </div>
           </div>
 
