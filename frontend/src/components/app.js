@@ -31,6 +31,7 @@ const App = () => (
       <Route path="/categories" component={DBCategoriesContainer} />
       <Route path="/visions" component={SearchBoxContainer} />
       
+      {/* <ProtectedRoute exact path="/recipes/new" component={CreateRecipeContainer} /> */}
       <ProtectedRoute path="/recipes/new/:id" component={CreateRecipeContainer} />
       <ProtectedRoute path="/recipes/update/:id" component={UpdateRecipeContainer} />
       <ProtectedRoute exact path="/recipes/:id" component={ShowRecipeContainer} />
