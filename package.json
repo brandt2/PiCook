@@ -41,6 +41,8 @@
     "nodemon": "^1.18.10"
   },
   "nodemonConfig": {
-    "ignore": ["frontend/*"]
+    "ignore": [
+      "frontend/*"
+    ]
   }
 }

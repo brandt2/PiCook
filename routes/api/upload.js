@@ -22,7 +22,9 @@ aws.config.update({
 });
 
 const s3 = new aws.S3();
-const client = new vision.ImageAnnotatorClient();
+const client = new vision.ImageAnnotatorClient({
+  keyFilename: "./vision-35b393df78d3.json"
+});
 const upload = multer({
   storage: multerS3({
     s3: s3,

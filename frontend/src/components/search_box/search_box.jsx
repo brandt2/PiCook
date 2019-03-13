@@ -73,7 +73,6 @@ class SearchBox extends React.Component {
   }
 
   responsesList() {
-    debugger
     return (
       <div className="response-select-list">
         <Form
@@ -129,7 +128,6 @@ class SearchBox extends React.Component {
   }
 
   render() {
-    debugger;
     return (
       <div className="search-img-box">
         <Dropzone onDrop={acceptedFiles => this.handleDrop(acceptedFiles)}>
@@ -158,4 +156,4 @@ class SearchBox extends React.Component {
   }
 }
 
-export default SearchBox;
+export default withRouter(SearchBox);
