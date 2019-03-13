@@ -1,0 +1,35 @@
+    /* BACKGROUND IMAGE */
+.show-recipe-background {
+  background-image: url("background2.jpg");
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  position: fixed;
+}
+
+    /* FLEX PARENT */
+.one-recipe {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+    /* NEST FLEX PARENT */
+.nested-flex {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  height: 500px;
+  width: 500px;
+  margin-top: 100px;
+  padding: 20px;
+  box-shadow: 0px 0px 2px 1px lightgray;
+  border-radius: 5px;
+}
+
+    /* TITLE */
+.recipe-title-label {
+  font-size: 30px;
+  /* align-self: center; */
+}
