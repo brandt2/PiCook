@@ -16,11 +16,11 @@ class Splash extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.history.push(`/dbmeals/${e.target.value}`)
+    this.props.history.push(`/dbmeals/${e.currentTarget.value}`)
   }
 
   handleUpdate(e){
-    this.setState({search: e.target.value});
+    this.setState({search: e.currentTarget.value});
   }
 
   render () {
