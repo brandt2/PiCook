@@ -23,9 +23,11 @@ class Recipe extends React.Component {
       <div className="index-all-recipes">
         <span className="index-recipe-background"></span>
         <div className="all-recipes-msg">All Recipes</div>
-        <NavLink className="create-recipe" to={`/recipes/new`}>
+
+{/* REMOVED because create_recipe.jsx componentDidMount */}
+        {/* <NavLink className="create-recipe" to={`/recipes/new`}>
           <div className="create-recipe-msg">Create Recipe</div>
-        </NavLink>
+        </NavLink> */}
 
         <div className="all-recipes">
           {this.props.recipes.map( (recipe,idx) => (
