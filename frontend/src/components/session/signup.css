@@ -120,7 +120,24 @@ input[type="password"], input[type="text"] {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.demo-button {
+  bottom: 10px;
+  display: block;
+  width: 245px;
+  height: 24px;
+  background: rgb(115, 231, 125);
+  padding: 8px 24px;
+  border-radius: 4px;
+  text-align: center;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
   margin-bottom: 30px;
+  cursor: pointer;
 }
 
 .signup-errors {
