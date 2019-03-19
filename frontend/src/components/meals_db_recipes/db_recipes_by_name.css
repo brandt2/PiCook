@@ -86,3 +86,20 @@
   background: url("./frame.png");
   background-size: 100% 100%;
 }
+
+.recipe-category-div:hover {
+  transition: 0.7s;
+  color: black;
+  box-shadow: 0 0 5px 5px rgba(0,0,0,0.6);
+}
+
+.recipe-category-div:hover .each-recipe {
+  opacity: 0.3;
+}
+
+.recipe-category-div:hover .recipe-category-title {
+  opacity: 1;
+  transition: 0.7s;
+  color: black;
+}
+
