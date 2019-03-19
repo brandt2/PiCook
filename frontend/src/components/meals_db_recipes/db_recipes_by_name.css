@@ -43,6 +43,8 @@
   justify-content: center;
   align-items: center;
   margin: 7.5px;
+  height: 330px;
+  width: 330px;
 }
 
 .recipe-index-title {
@@ -53,8 +55,7 @@
 }
 
 .each-recipe {
-  height: 330px;
-  width: 330px;
+  width: 100%;
 }
 
 .recipe-index-div:hover {
@@ -71,4 +72,17 @@
   opacity: 1;
   transition: 0.7s;
   color: black;
+}
+
+.recipe-category-div {
+  position: relative;
+  color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 7.5px;
+  height: 330px;
+  width: 330px;
+  background: url("https://cdn.pixabay.com/photo/2017/07/09/15/49/frame-2487285_960_720.png");
+  background-size: 100% 100%;
 }
