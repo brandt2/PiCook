@@ -1,5 +1,4 @@
 # PiCook
-![PiCook Logo](favicon.png)
 [Live Site!](https://picook.herokuapp.com/#/)
 
 PiCook is an app where you can find recipes by uploading a picture or searching a title of the meal or an ingredient.
