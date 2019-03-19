@@ -33,13 +33,12 @@ class DBCategories extends React.Component{
     const categories = recipes.map(cat => {
       if (cat.strCategory === "Pork") cat.strCategoryThumb = "https://www.themealdb.com/images/category/pork.png"
       return (
-      <div className="recipe-index-div">
+      <div className="recipe-category-div">
         <h1 className="recipe-index-title">{cat.strCategory}</h1>
         <Link to={`/categories/${cat.strCategory}`} key={cat.idCategory}>
           <img className="each-recipe" src={cat.strCategoryThumb} alt={cat.strCategory}/>
         </Link>
       </div>
-
       )
     })
     
