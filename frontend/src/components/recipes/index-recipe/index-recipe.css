@@ -1,10 +1,10 @@
     /* ALL */
 .index-all-recipes {
   overflow: scroll;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   flex-direction: column;
-  padding-bottom: 100px;
+  padding-bottom: 200px;
 }
 
     /* BACKGROUND */
@@ -69,6 +69,7 @@
   flex-wrap: wrap;
   position: relative;
   align-self: center;
+  /* padding-bottom: 200px; */
 }
 
 .single-recipe {
