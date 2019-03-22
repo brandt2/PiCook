@@ -4,6 +4,8 @@
 PiCook is an app where you can find recipes by uploading a picture or searching a title of the meal or an ingredient.
 If you haven't made an account with us, you can still search for recipes, but you are not allowed to create/edit/delete your own recipes.
 
+* `npm run dev`
+
 ### Features:
 * User Auth:
  * Create a new User
