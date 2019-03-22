@@ -65,7 +65,7 @@
 /* RECIPE FLEX */
 .all-recipes {
   display: flex;
-  width: 750px;
+  width: 888px;
   flex-wrap: wrap;
   position: relative;
   align-self: center;
@@ -78,7 +78,7 @@
   /* position: relative; */
   /* top: -10px; */
   padding: 10px;
-  height: 100px;
+  height: 150px;
   width: 200px;
   text-align: center;
   line-height: middle;
