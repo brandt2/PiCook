@@ -136,7 +136,7 @@ class SearchBox extends React.Component {
             <section>
               <div {...getRootProps()}>
                 <input {...getInputProps()} />
-                <p className="search-img-box">Drag and drop a file here, or click to select file</p>
+                <p className="search-img-box">Drag and drop a food picture, or click to select a food image</p>
               </div>
             </section>
           )}
