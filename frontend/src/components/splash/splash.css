@@ -104,9 +104,11 @@ ul {
 
 .splash-slogan {
   font-family: 'Montserrat', sans-serif;
-  font-size: 44px;
+  font-size: 48px;
   font-weight: 600;
-  color: rgb(115, 231, 125);
+  color: white;
+  margin-bottom: 30px;
+  text-shadow: 1.3px 1.3px black;
 }
 
 .search-term {
