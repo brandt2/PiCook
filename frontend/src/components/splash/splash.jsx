@@ -31,6 +31,7 @@ class Splash extends React.Component {
         <div className='slide2'></div>
         <div className='slide3'></div>
         <div className="wrap">
+          <h1 className="splash-slogan">Turn those food photos into reality!</h1>
           <form className="search" onSubmit={this.handleSubmit}>
             <input
               className="search-term" 
