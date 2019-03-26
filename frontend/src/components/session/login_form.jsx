@@ -91,7 +91,7 @@ class LoginForm extends React.Component {
 
           <button className="demo-button" onClick={this.handleDemo}>Demo Login</button>
 
-          <h2 className="to-login">Already have an account?
+          <h2 className="to-login">Do not have an account?
             <Link className="redirect-login" to="/signup"> Sign up here.</Link>
           </h2>
         </form>
