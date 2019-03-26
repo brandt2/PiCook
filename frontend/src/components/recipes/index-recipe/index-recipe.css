@@ -23,6 +23,8 @@
   align-self: center;
   margin-top: 70px;
   margin-bottom: 30px;
+  color: white;
+  text-shadow: 1.3px 1.3px black;
 }
 
     /* CREATE RECIPE BUTTON */
@@ -63,7 +65,7 @@
 /* RECIPE FLEX */
 .all-recipes {
   display: flex;
-  width: 888px;
+  width: 800px;
   position: relative;
   align-self: center;
   flex-direction: column;
