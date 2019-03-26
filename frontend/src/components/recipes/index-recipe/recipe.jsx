@@ -33,9 +33,11 @@ class Recipe extends React.Component {
           {this.props.recipes.map( (recipe,idx) => (
             <NavLink className="single-recipe-link" to={`/recipes/${recipe._id}`} key={idx} >
               <div className="single-recipe">
-                <div className="index-recipe-title">{recipe.title.slice(0,10)}</div>
-                <div className="avg-price">Avg Price:</div>
-                <div className="index-recipe-price">${recipe.price%1000000}</div>
+                <div className="index-recipe-title">{recipe.title}</div>
+                <div className="price-wrapper">
+                  <div className="avg-price">Avg Price:</div>
+                  <div className="index-recipe-price">${recipe.price%1000000}</div>
+                </div>
               </div>
             </NavLink>
           ))}
