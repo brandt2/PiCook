@@ -1,7 +1,6 @@
     /* ALL */
 .index-all-recipes {
   overflow: scroll;
-  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   padding-bottom: 200px;
@@ -35,7 +34,6 @@
   background-color: rgba(0, 0, 0, 0.123);
   color: black;
   border: 1.5px solid rgba(0, 0, 0, 0.377);
-  /* border-radius: 10px; */
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;  
 }
@@ -66,22 +64,17 @@
 .all-recipes {
   display: flex;
   width: 888px;
-  flex-wrap: wrap;
   position: relative;
   align-self: center;
-  /* padding-bottom: 200px; */
+  flex-direction: column;
 }
 
 .single-recipe {
   border: 1px solid rgba(0, 0, 0, 0.377);
-  /* border-radius: 10px; */
-  /* position: relative; */
-  /* top: -10px; */
   padding: 10px;
-  height: 150px;
-  width: 200px;
-  text-align: center;
-  line-height: middle;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
   background-color: rgba(0, 0, 0, 0.123);
 }
 
@@ -96,19 +89,24 @@
   font-size: 20px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  margin-bottom: 20px;
   overflow: hidden;
   padding-top: 15px;
+}
+
+.price-wrapper {
+  align-self: flex-end;
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+  padding-bottom: 15px;
 }
 
 .avg-price {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  /* padding-top:8px; */
 }
 
 .index-recipe-price {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  padding-top: 8px;
 }
