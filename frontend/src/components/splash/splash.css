@@ -102,6 +102,13 @@ ul {
   align-items: center;
 }
 
+.splash-slogan {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 44px;
+  font-weight: 600;
+  color: rgb(115, 231, 125);
+}
+
 .search-term {
   width: 100%;
   padding: 5px;
