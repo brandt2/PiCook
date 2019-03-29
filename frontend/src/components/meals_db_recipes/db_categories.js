@@ -36,8 +36,8 @@ class DBCategories extends React.Component{
       return (
       <Link to={`/categories/${cat.strCategory}`} key={cat.idCategory}>
         <div className="recipe-category-div">
-          <h1 className="recipe-index-title">{cat.strCategory}</h1>
-          <img className="each-recipe" src={cat.strCategoryThumb} alt={cat.strCategory}/>
+          <img className="each-category" src={cat.strCategoryThumb} alt={cat.strCategory}/>
+          <h1 className="recipe-category-title">{cat.strCategory}</h1>
         </div>
       </Link>
       )
