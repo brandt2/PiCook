@@ -2,7 +2,8 @@
   background-image: url("background.jpg");
   background-size: cover;
   width: 100%;
-  height: auto;
+  /* height: auto; */
+  height: 60vh;
   /* background-repeat: no-repeat; */
   background-position: center;
 }
@@ -14,18 +15,21 @@
   margin-left: auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
   font-family: 'Montserrat', sans-serif;
 }
 
 .title-index {
-  margin-top: 64px;
+  /* margin-top: 64px; */
+  /* padding: 200px; */
   display: flex;
   justify-content: center;
 }
 
 .found-title {
-  margin: 10px;
-  font-size: 48px;
+  /* margin: 10px; */
+  margin: 160px 0 160px 0;
+  font-size: 90px;
   font-weight: 700;
   color: white;
   text-shadow: 1.3px 1.3px black;
