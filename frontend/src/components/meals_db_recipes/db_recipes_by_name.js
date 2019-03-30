@@ -41,12 +41,12 @@ class DBRecipesByName extends React.Component {
     } else {
       const recipeLink = this.props.recipes.map((recipe, index) =>
         (
-          <div className="recipe-index-div">
-            <h1 className="recipe-index-title">{recipe.strMeal}</h1>
-            <Link to={`/dbmeals/food/${recipe.idMeal}`} key={recipe.idMeal}>
+          <Link to={`/dbmeals/food/${recipe.idMeal}`} key={recipe.idMeal}>
+            <div className="recipe-index-div">
               <img className="each-recipe" src={recipe.strMealThumb} alt={recipe.strMeal} />
-            </Link>
-          </div>
+              <h1 className="recipe-index-title">{recipe.strMeal}</h1>
+            </div>
+          </Link>
         )
       )
       return (
