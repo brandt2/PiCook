@@ -32,12 +32,11 @@ class DBCategories extends React.Component{
     
     const categories = recipes.map(cat => {
       if (cat.strCategory === "Pork") cat.strCategoryThumb = "https://www.themealdb.com/images/category/pork.png";
-      // if (cat.strCategory === "Desert") cat.strCategory = "Dessert";
       return (
       <Link to={`/categories/${cat.strCategory}`} key={cat.idCategory}>
         <div className="recipe-category-div">
           <img className="each-category" src={cat.strCategoryThumb} alt={cat.strCategory}/>
-          <h1 className="recipe-category-title">{cat.strCategory}</h1>
+          <h1 className="recipe-category-title">{cat.strCategory === "Desert" ? "Dessert" : cat.strCategory}</h1>
         </div>
       </Link>
       )
@@ -47,7 +46,7 @@ class DBCategories extends React.Component{
       <div className="index-background">
         <div className="yes-index-recipes">
           <div className="title-index">
-            <h2 className="found-title">Found Categories</h2>
+            <h2 className="found-title">All Categories</h2>
           </div>
           <div className="index-recipes">
             {categories}
