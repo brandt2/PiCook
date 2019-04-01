@@ -33,6 +33,7 @@ class ShowRecipe extends React.Component {
         <span className="show-recipe-background"></span>
         <div className="one-recipe">
           <div className="nested-flex">
+          <NavLink className="back-recipe-button show-buttons" to='/recipes/'><i class="fas fa-arrow-left"></i></NavLink>
             <div className="show-label-wrapper">
               <div className="recipe-label">Title:</div>
               <div className="show-recipe-title">{this.props.recipe.title}</div>
@@ -59,6 +60,7 @@ class ShowRecipe extends React.Component {
             </div>
             <div className="show-buttons">
               <button className="recipe-delete-button" onClick={this.handleDelete}>Delete Recipe</button>
+              {/* <NavLink className="back-recipe-button show-buttons" to='/recipes/'><i class="fas fa-arrow-left"></i></NavLink> */}
               <NavLink to={`/recipes/update/${this.props.recipe._id}`} >
                 <div className="recipe-update-button">Update Recipe</div>
               </NavLink>
