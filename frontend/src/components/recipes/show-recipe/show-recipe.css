@@ -141,6 +141,24 @@
 
 .recipe-update-button:hover {
   /* background-color: rgba(3, 214, 21, 0.623); */
-opacity: 0.5;
+  opacity: 0.5;
 }
 
+/* BACK RECIPE BUTTON */
+.back-recipe-button {
+  border: 1px solid transparent;
+  padding: 10px;
+  border-radius: 5px;
+  width: 30px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.123);
+  color: black;
+  position: relative;
+  top: -15px;
+  /* align-self: flex-end; */
+}
+
+.back-recipe-button:hover {
+  background-color: rgba(0, 0, 0, 0.349);
+  color: white;
+}
