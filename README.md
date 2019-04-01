@@ -1,6 +1,7 @@
 # PiCook
-[Live Site!](https://picook.herokuapp.com/#/)
-![splash](./readme/splash.png)
+[Live Site!](https://picook.herokuapp.com/#/)  
+
+![splash](./readme/splash.png)  
 PiCook is an app where you can find recipes by uploading a picture or searching a title of the meal or an ingredient.
 If you haven't sign up an account with us, you can still search for recipes, but you are not allowed to create/edit/delete your own recipes.
 
