@@ -107,6 +107,10 @@ input[type="password"], input[type="text"] {
   padding: 5px;
 }
 
+input.search-term {
+  padding-left:15px;
+}
+
 .signup-form-button {
   bottom: 10px;
   display: block;
