@@ -31,16 +31,14 @@ class DBRecipesByCategory extends React.Component {
 
     const recipes = this.props.recipes.map((recipe, index) => {
       return (
-        <div className="recipe-index-div" key={index}>
-          <h1 className="recipe-index-title">{recipe.strMeal}</h1>
-          <Link to={`/dbmeals/food/${recipe.idMeal}`}>
+        <Link to={`/dbmeals/food/${recipe.idMeal}`}>
+          <div className="recipe-index-div" key={index}>
             <img className="each-recipe" src={recipe.strMealThumb} alt={recipe.strMeal}/>
-          </Link>
-        </div>
+            <h1 className="recipe-index-title">{recipe.strMeal}</h1>
+          </div>
+        </Link>
       )
-
-    }
-    )
+    })
 
     return(
       <div className="index-background">
